@@ -1,0 +1,89 @@
+/* This file is an style sheet */
+
+/* Default styling */
+/* --------------------- " * "- we could use unviversal selector as well */
+html{
+    
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+
+}
+
+nav{
+    width: 20rem;
+    /* 
+    always use the top ,bottom ,left ,right property 
+    to change the postion of an object instead of using the margin prop
+    */
+    position: relative;
+    top: 1rem;
+}
+
+header{
+    /*   */
+    display: flex;
+    justify-content: space-between;
+    /* Top/bottom , left ,right */
+    /* One rem is equivalent to one font size prsent in the file */
+    margin: 0 10px;
+}
+
+
+header h1{
+
+    font-weight: bolder;
+    font-size: 2rem;
+
+}
+
+
+ul{
+    display:flex ;
+    justify-content: space-around;
+}
+
+li{
+    list-style: none;
+}
+
+li>a{
+    text-decoration: none;
+    color: black;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.showcase_image{
+
+    width: 95vw;
+    margin: 1rem;
+
+}
+
+article{
+    display: flex;;
+    justify-content: space-around;
+    
+}
+
+.container{
+    text-align: center;
+}
+.container>p{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.container>h1{
+
+    font-size: smaller;
+    font-weight: bolder;
+
+}
+
+footer{
+
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-size: small;
+}

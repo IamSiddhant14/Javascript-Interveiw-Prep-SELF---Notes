@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        /* In To Out
+        content,padding,border,margin
+        */
+        
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .box{
+            
+            border: 10px solid red;
+            background-color: black;
+            color: blue;
+            /* Height width if not mentioned will be dynamic in nature or else if mentioned would be according to the mentioned size */
+            height: 200px;
+            width: 200px;
+            /* Padding always lies within the height and width */
+            padding-top: 50px;
+            padding-left: 190px;
+            padding-right: 10px;
+            padding-bottom: 40px;
+            /* Top , Right ,Bottom, Left  same for margin as well */
+            padding: 10px,10px,10px,10px;
+            /* Top , Right/Left ,Bottom  same for margin as well */
+            padding: 10px,10px,10px,10px;
+            /* similary is for margin as well */
+            border-top: 2px,solid,black;
+            border-radius: 50%;
+
+        }
+
+    </style>
+</head>
+
+<body>
+ 
+    <div class = "box">
+        <!-- Inline css has the height priorety -->
+        <p style="color:aliceblue;">SIDDHANT</p> 
+    </div>
+    
+</body>
+</html>

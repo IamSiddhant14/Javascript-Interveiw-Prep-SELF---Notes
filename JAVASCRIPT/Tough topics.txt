@@ -1,0 +1,12 @@
+memorization
+debouce
+throttle
+even capturing , propogation , bubbling
+oops
+infinte currying
+flatten object
+Async
+polyfill call , bind apply
+module parttens
+once with closure 
+
