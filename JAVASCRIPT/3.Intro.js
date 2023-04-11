@@ -41,8 +41,38 @@ const c = "hello c";
 console.log(c);
 
 
+// && - and
+// || - Or
+// a == b
+// a != b
+// a++
+// a--
+// a+= 2
+// a-=2
+// a<b
+// a<=b
+// a>= b
 
 
+console.log(Math)
+
+//  To genrate number bw 1-100;
+const ran = Math.random();
+console.log( Math.round(ran* 100));
+
+// There is a diffrence bewteen 
+// .innerText
+// .innerHTML
+
+const d = document.querySelector('.abc');
+const f = d.children;
+Array.from(d.forEach((ele) => {
+
+}))
 
 
+//  kyuki forEach he kam kare ga :
+
+d.style.backgroundColor = 'blue';
+d.classList.add('newClass');
 

@@ -1,6 +1,7 @@
 //Array
+// DEEP INSIDE ARRAYS ARE NOTHING BUT AN  OBJECT 
 
-//Arrays are ordered collection organised in a continous block of memory where values of diffrent data types is been stored 
+//Arrays are ordered collection organised in a continous block of memory where values of diffrent data  es is been stored 
 
 let arr = []; //array are initalized with square brackets
 //hetrogenous arrays are present in javascript
@@ -13,11 +14,14 @@ console.log(num3);
 
 console.log(arr1);
 
-// spread
+// spread // This is pass by value 
 let arr2 = [...arr1];// This will create a new copy of array
 
 //Arrays methods
 let cars = [1,2,3];
+
+// The below statement is pass by reference .
+const ca = cars ;
 
 // Accessing element
 console.log(cars[1]);
@@ -46,6 +50,7 @@ console.log(cars.length);
 
 //pop()- takes element from the end of the array
 
+ 
 let remainigcars = cars.pop();
 console.log(remainigcars); // poped element
 console.log(cars); // remaining elements
@@ -82,6 +87,9 @@ cars.forEach(function(ele, index){
 
 //MultiDimensional Array
 
+let dish = [" apple" , "bannna" , 'stra'];
+console.log(dish.join(","));
+
 let matrix = [
     [1.2,3],
     [4,5,6],
@@ -91,3 +99,39 @@ let matrix = [
 console.log(matrix[0][1]); // OUTPUT - 2
 console.log(matrix[2][1]); // OUTPUT - 8
 
+const arr11 = ["Cecilie", "Lone"];
+const arr21 = ["Emil", "Tobias", "Linus"];
+
+const children = arr11.concat(arr21);
+console.log( ...arr11 , ...arr21 );
+
+console.log(children);
+
+Array(10).fill(`${name}`);
+
+arr11.reverse();
+console.log(arr11);
+
+arr1.slice(1,6);
+arr1.splice(1 ,1 , 1 );
+
+
+
+arr.flat();
+arr.flat(2);
+arr.flat(3);
+
+arr.sort(sorting);
+
+function sorting (){
+
+    if( a<b){
+        return -1;
+    }
+
+    if( a >b ){
+        return 1;
+    }
+
+    return 0 ;
+}

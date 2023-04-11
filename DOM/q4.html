@@ -63,7 +63,7 @@
 
         for( let i =0; i<cards.length ; i++){
             cards[i].addEventListener('dblclick' , function(e){
-                let classTobeAttached = e.currentTarget.getAttribute('data-color');
+                let classTobeAttached = e.target.getAttribute('data-color');
                 e.currentTarget.setAttribute('data-color' , 'used');
                 e.currentTarget.classList.add(classTobeAttached);
             })

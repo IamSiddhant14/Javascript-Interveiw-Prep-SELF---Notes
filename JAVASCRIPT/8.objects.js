@@ -38,7 +38,20 @@ const obj2 ={// Itself then after that outer enviroment
     __proto__:obj
 }
 
+
 console.log( obj2.name);
+
+const name = 'na'
+const obj1 = {
+    [name] : 'siddhant'
+}
+
+const obj3 = {
+    val : 'sharma',
+    __proto__ : obj1
+}
+
+console.log(obj3.na)
 
 
 let cap = {
@@ -70,6 +83,8 @@ console.log(address);
 console.log(lastname);
 
 // if in case the name of the variable is invaild or in case we are accessing the prop of the object dynamically then we are suppose to ue only square bracket notation only and dot notation will give a error in this case
+
+// Object k inside jo function hote hai usko hum method bolte hai 
 
 // adding prop to object
 cap.awesomeLife = true ;
@@ -124,6 +139,7 @@ function flatten( obj , parent , res ={} ){
 
         }
     }
+    
 }
 
 
@@ -134,3 +150,26 @@ function flatten( obj , parent , res ={} ){
 // In browser local storage we will always store data in form of String
 
 localStorage.setItem(JSON.stringify(cap)); 
+
+let mainPlane = {
+    airplane : 'fly India',
+    iatacode : 'FI',
+    booking : [],
+    book : function( flightNum , name ){
+        console.log(`${name} Booked flight on ${this.airplane} and ${flightNum}`);
+        this.booking.push({ flight : `${this.airplane}` })
+    }
+};
+
+let childPlane = {
+    airplane : 'fly canada',
+    type : 'booing',
+    booking:[]
+}
+
+
+// mainPlane.book(1234 , 'air canada');
+// console.log(mainPlane.booking);
+
+mainPlane.book.call(childPlane, 157 , 'aircanada' );
+console.log(childPlane.booking);

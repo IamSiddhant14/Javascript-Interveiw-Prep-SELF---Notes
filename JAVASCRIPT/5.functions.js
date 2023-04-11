@@ -67,12 +67,21 @@ let obj = {
     }
 }
 
+let invitation = function ( name = "Siddhant" ){
+    console.log(` Hi my name is ${name}`);
+}
+
+invitation();
+invitation('sharma');
+
+// output:
+// Hi my name is Siddhant
+// Hi my name is sharma
+
 for( let key in obj ){
     console.log( key + '->' + obj[key]() ); 
 }
 
-console.log( 2 == '2');
-console.log( 2 === '2');//type checking in case of "==="
 
 //Various type of function
 
@@ -136,7 +145,7 @@ holder();
 
 var len = 4 ;
 
-function newq() {
+function newq(cb) {
 
     var len = 5;
     console.log(arguments[0]);
@@ -154,4 +163,78 @@ newq(cb);
 
 // Prototype is nothing but an empty object added on a function
 
-// 
+// const arr = name  => (
+//     `welcome ${name}`
+// )
+
+// welcome sdd
+
+// const arr = name  => `welcome ${name}`
+
+// welcome sdd
+
+// const arr = name  => {
+//     `welcome ${name}`
+// }
+//  undefined
+
+console.log(arr("sdd"));
+
+// A higher order function is a function that takes one or more functions as an arguments, or returns a function as its result
+
+let lower = function( str ){
+    return str.toLowerCase() ;
+}
+
+let heigher = function ( str ){
+    return str.toUpperCase();
+}
+
+const ans = function ( fun , st ){
+    console.log(fun( st));
+}
+
+ans( heigher , 'Siddhant Sharma' );
+
+// Another One 
+
+let compli = function( name ){
+    return function( val ){
+        console.log(`${name} ${val} `);
+    }
+}
+
+ compli('sid')(69);
+
+//  settimeout
+
+function callMe(name){
+    console.log(`Call me ${name}`);
+}
+
+const id = setTimeout( callMe , 5000 , 'siddhant' );
+clearTimeout(id); 
+
+
+// When from a single function two invocation takes place then in that case they both are independent of one another and any change in one invocation doesnt effect another 
+
+function abc ( name = 'sidd'){
+    let count = 1;
+     console.log(`sharma${name} ${++count}`)
+}
+
+abc('siddhant');
+abc();
+
+// But since here both of them are refrencing to the same global variable count hence its fucked up 
+
+let count = 1;
+function abcc ( name = 'sidd'){
+     console.log(`sharma${name} ${++count}`)
+}
+
+abcc('siddhant');
+abcc();
+
+// After return statement code is not reachable
+

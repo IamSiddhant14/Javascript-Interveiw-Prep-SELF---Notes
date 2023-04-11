@@ -1,22 +1,23 @@
-// We could see debouncing happening when it comes to resize , search bar etc.
+// We could see debouncing happening when it comes to resize , search bar , scroll event etc.
 
-let counter = 0;
+// Debounce happens when the diffrence bewteen the two key strokes/ event is more than the mentioned timing , it is method to limit the calling of a function for optimiztion 
 
-// function getData(){
-//     console.log("Fetching Data.."+counter);
-//     counter++;
-// }
+let count = 0;
 
-// function myDebounce( cb , delay ){
+function getData() {
+    console.log("Fetching Data" + count++);
+}
 
-//     let timer;
+function doSomeMagic(cb, delay) {
 
-//     return function(...args){
-//         if( timer ) clearTimeout(timer);
-//         timer = setTimeout(() =>{
-//             cb();
-//         }, delay )
-//     }
-// }
+    let time;
 
-// const BetterFunction = myDebounce(getData , 500 );
+    return function () {
+        if (time) clearTimeout(time);
+        time = setTimeout(() => {
+            cb();
+        }, delay);
+    }
+}
+
+const BetterFunction = doSomeMagic(getData, 300);

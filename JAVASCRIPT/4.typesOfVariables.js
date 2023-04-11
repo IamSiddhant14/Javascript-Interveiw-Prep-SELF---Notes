@@ -1,6 +1,9 @@
-//There are two type of data type in javascript :
+//There are two categories of data type in javascript :
 
-// var was present from the birth of javascript while the let and const where introduced in ES6 version of javascript
+// var was present from the birth of javascript while the let and const where introduced in ES6 version of javascri
+// There are 7 data type in javascript string , number , boolean , null ( This need to be provided ) , undefined ( It is been assigned automatically ) ,  object , symbols  
+
+//  Name of variable should be in camel case mostly 
 
 // 1.> primitive - Number ,String , boolean ---------- stack per he store hota hai or reference variable bhi stack per he banta hai
 
@@ -20,7 +23,7 @@
 
 // JavaScript is single threaded and has a synchronous execution model.
 // Single threaded means that one command is being executed at a time.
-// Synchronous means one at a time i.e. one line of code is being executed at time in order the code appears.
+// Synchronous means one at a time i.e. one line of code is being executed at time in order the code appears. 
 // So in JavaScript one thing is happening at a time
 
 // When we are trying to access an variable which is not been defined yet then it would result in an reference error / not defined ( thats means its not been defined in the memory )
@@ -34,46 +37,33 @@
 
 // a ="20";
 // console.log(a);
-// // a="Hello"; dynamic behaviour of javascript
+/// a="Hello"; dynamic behaviour of javascript
 // console.log(a);
 // a= true;
 // console.log(a);
-// // assigning value to "a" as null
+// assigning value to "a" as null
 // a= null;
 // console.log(a);
+//javascript is an dyanimically typed language that is dont need to specifie the type of variable as such // semicolon is not compulsory in javascript // Javascript is a single threaded language not multithreaded  //javascript is a sychronus language by default.  Although the callback function might appear to execute asychrousely but in actualle they are also been executed sys
 
-// //javascript is an dyanimically typed language that is dont need to specifie the type of variable as such
-// // semicolon is not compulsory in javascript
-// // Javascript is a single threaded language not multithreaded 
-// //javascript is a sychronus language by default.  Although the callback function might appear to execute asychrousely but in actualle they are also been executed sys
-
-// //let and const :-
-
-// //frist problem of var : redeclartion
-// //That is 
+//let and const :-
+//frist problem of var : redeclartion //That is 
 // var a = 2;
 // console.log(a);
 // var a = "string";
 // console.log(a);
 
-
-// // But in case of "let" keyword we could not redeclare the same variable where was this was allowed in var
-// //but here re-defining / reasigning is allowed , same as that in var keyword javascript
-
-// //redeclaring(not allowed) will result in an syantax error and redefing/reassigning (allowed) this two are two diffrent things
+// But in case of "let" keyword we could not redeclare the same variable where was this was allowed in var //but here re-defining / reasigning is allowed , same as that in var keyword javascript
+//redeclaring(not allowed) will result in an syantax error and redefing/reassigning (allowed) this two are two diffrent things
 
 // let b = 2;
 // console.log(b);
-
-// //This will result in an error
-// // let b = "hello";
-// // console.log(b);
-
-// // This is possible in case of let and var 
+//This will result in an error // let b = "hello"; // console.log(b);
+// This is possible in case of let and var 
 // b=4; //redefiningF
 // console.log(b);
 
-// //Whether the number is prime or not
+//Whether the number is prime or not
 // let flag = true;
 // let num = 13;
 
@@ -85,7 +75,7 @@
 
 
 // for( let i =2 ; i*i < num ; i++){//In loop we should not use "var" keyword instead we should use "let "as its value is saved for a particular iteration
-//     //"let" has block scope that is it have exsitance within the block only unlike "var " which has function scope
+//"let" has block scope that is it have exsitance within the block only unlike "var " which has function scope
 //     if( num % i == 0){
 //         flag = false;
 //         break;
@@ -100,7 +90,7 @@
 
 //problem -2 with var :
 
-if(10 % 2 == 0){
+if (10 % 2 == 0) {
     var c = 277777777777777;
     console.log(c);
 }
@@ -111,12 +101,12 @@ console.log(c); //no error , only the let and const variables are block scoped a
 //Here error as let has its existance within the block only that is block scope
 
 
-if( 10%2 ==0 ){
-// Here this k doesnt exist after this block
+if (10 % 2 == 0) {
+    // Here this k doesnt exist after this block
     let k = 1;
-    console.log(k+"This one ");
+    console.log(k + "This one ");
 }
-   
+
 // console.log(k); 
 // This 'let' variable will result in an error but in case of 'var' this wont result in refrence error
 
@@ -132,20 +122,17 @@ const d = 10;
 // whereas the reasigning  thing is possible in "let" 
 // And the reasigning and the redeclarion thing is possible in "var"
 
-
-
 //concatenation in javascript
-console.log("I am from outside "+d);
-console.log("I am from outside ",d);
+console.log("I am from outside " + d);
+console.log("I am from outside ", d);
 
-console.log("2",d);
-console.log("2 "+d);
-
+console.log("2", d);
+console.log("2 " + d);
 
 //var is function scoped and let/const are both function and blocked scope unlike var which is only function scoped, try the below example
 
 var a = 10;
-function u(){
+function u() {
     var a = 30;
     console.log(a);
 }
@@ -159,23 +146,23 @@ console.log(a);
 // The below given case is possible as we know that both the let are been declared in two diffrent scopes
 
 let a = 10;
-function u(){
+function u() {
     let a = 30;
     console.log(a);
 }
 
+// const no change property doesnt hold for values present inside of a array and object
 
-// var a = 10;
-if(true){
+// var a = 10; 
+if (true) {
     var a = 399;
     console.log(a);
 }
 // u();
 console.log(a);
 
-
 var a = 10;
-if(true){
+if (true) {
     var a = 30;
     console.log(a);
 }
@@ -184,14 +171,18 @@ console.log(a);
 
 // output: 30 , 30
 
+// we can declare two same let or const variable in diffrent scope .
+// Since they are blocked and functioned scoped 
 
 // ***************************************************** VERY IMPORTANT CONCEPT BELOW *************************************************
+
+// Let and const variable is not present on the window object 
 
 // var fruit = "a";
 
 // {
 //     var fruit;
-//     console.log( fruit);
+//     console.log(fruit);
 // }
 
 // OUT - a
@@ -235,15 +226,28 @@ console.log(a);
 
 // undefined
 
+// {  THis { } represent a block in javascript 
+
+// This is illegal 
+// let a = 20 ;
 // {
+//     var a = 20 ;
+// }
+ 
+// This is  legal 
+
+// let a = 20 ;
+// function x() {
+//     var a = 20 ;
+// }
 
 //     console.log(a);
 //     let a = 10;
 // }
 
-// error
+// error( Temporal dead zone )
 
-function abc(){
+function abc() {
     var a = 3;
     console.log(a);
 }
@@ -255,13 +259,14 @@ abc();
 
 
 {
- var b = 4;
- console.log(b);
+    var b = 4;
+    console.log(b);
 }
 
 console.log(b);
 
 // let to var is not possible but var to let is possible , 2 -> 1 is not possible while 1 -> 2 is possible . This is called varable shadowing 
+// The above statemnt is only valid when the scope of both of them are same like a block and ablock etc .
 
 // we could not access let and const before initalization as they are present in a temporal deadzone so one could not access it before declaring its value 
 
@@ -290,5 +295,13 @@ console.log(j);
     console.log(v);
 }
 
-v= 2;
+v = 2;
 console.log(v);
+
+const g = 10;
+if( true ){
+   const g = 9;
+   console.log(g);
+}
+
+console.log(g);

@@ -11,14 +11,19 @@
 
 /* Webscrapping - Extracting important data from some other website for the sake of our use is called using webscrapping  */
 
+@media ( min-width: 300px ) and ( max-width : 600px ){
+    .main{
+        background-color:red;
+    }
+ 
+}
+        /*  Many element could have same lass but diffrent elemnt could not have same id that is class is unnique but id arent  */
         /* In style tag we right CSS */
         /* css always require an semicolon(;) at the end of each property so as to ensure property break and start an new property */
         /* Css selector */
 
         /* Universal selector */
-        *{
-            color: black;
-        }
+
 
         /* Element Selector */
         h1{
