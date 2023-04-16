@@ -1,35 +1,56 @@
-const memo = (cb) => {
+// const memo = (cb) => {
 
-    let cache = {};
+//     let cache = {};
 
+//     return function(...args){
+//         var n = args[0];
+//         if( n in cache){
+//             return cache[n];
+//         }else{
+//             var result = cb(n);
+//             cache[n] = result ;
+//             return result;
+//         }
+
+//     }
+
+// }
+
+let memo = (cb) => {
+
+    let res = {};
     return function(...args){
-        var n = args[0];
-        if( n in cache){
-            return cache[n];
+
+        let v = args[0];
+        if(v in res ){
+           return res.v;
         }else{
-            var result = cb(n);
-            cache[n] = result ;
-            return result;
+           res.v = cb(v);
+           return res.v;
         }
-
     }
+}
 
+
+function getans ( ope ){
+    return function(a){
+        return function(b){
+            if( ope == '+') return a+b;
+            if( ope == '-') return a-b;
+        }
+    }
 }
  
 
-const memo1 = (cb) =>{
+console.log(getans('+')(2)(3));
 
-    let res = {};
-
-    return function(...args){
-        let n = args[0];
-
-        if( n in obj ){
-            return obj[n];
-        }else{
-            let ans = cb(n);
-            res[n] = ans;
-            return ans;
-        }
+function a (b){
+    return function(c){
+        console.log('here')
+        if(c) return a(b+c) ;
+        return b;
     }
 }
+
+
+a(3)(4)(5)(6)(7)(8)(9)();

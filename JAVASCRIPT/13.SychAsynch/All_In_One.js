@@ -61,6 +61,7 @@
 // Promises
 
 
+
 function register(){
   return new Promise((resolve , reject) => {
       resolve("Register End ");
@@ -105,6 +106,24 @@ register().then(
     console.log("We fucked up")
 })
 
+
+
+fetch('https://fakestoreapi.com/products/1').then((data) =>{
+    return data.json() ;
+}).then((val) => console.log(val)).catch((err) => console.log(err));
+
+
+async function result(){
+      
+    const data = await fetch('https://fakestoreapi.com/products/1');
+    const val = await data.json();
+    console.log(val);
+  
+}
+
+result().then().catch((err) => {
+    console.log(err);
+});
 
 // Async Await
 

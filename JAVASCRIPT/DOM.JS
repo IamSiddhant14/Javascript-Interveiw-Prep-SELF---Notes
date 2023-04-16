@@ -1,11 +1,16 @@
 // Node Js dont understand document or dom , only the js engine understand it 
 
+//  Select and then change the element  
+
 console.log(document);
+console.log(document.url);
 
 //This give us a Node list 
 
 document.querySelectorAll('p');
 document.querySelectorAll('#p');
+
+// we will get a nodelist as a result of it 
 const a = document.querySelectorAll('.p');
 
 // We can use forEach for nodeList :-
@@ -17,18 +22,19 @@ a.forEach((ele) => {
 document.querySelector('.p');
 
 
-document.getElementsByTagName();
+document.getElementsByTagName('p');
+document.getElementsByTagName('div');
+document.getElementsByTagName('a');
 
 
-document.getElementById();
+document.getElementById('fbi');
 
 
-document.getElementsByClassName();
+document.getElementsByClassName('fdi');
 
 
 const b = document.querySelector('p');
 // They overrides the already text present
-
 
 b.innerText = 'hello innerText';
 
@@ -48,16 +54,15 @@ b.classList.add('');
 b.classList.remove();
 b.classList.replace();
 
-//  This will give all the children to the parent div 
+//  This will give all the children to the parent div result is an html collection 
+
 b.children;
-
-
-//  This will give parent to the  children div 
-b.parentElement;
-
 //  To converthtml Collection to n array we do the folloeing
 
 Array.from(b.children);
+
+//  This will give parent to the  children div 
+b.parentElement;   
 
 b.previousElementSibling;
 b.nextElementSibling;
@@ -124,3 +129,4 @@ a.addEventListener('keyup', (e) => {
 
 document.createChild();
 document.appendChild()
+

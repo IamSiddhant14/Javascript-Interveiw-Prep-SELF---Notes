@@ -121,3 +121,35 @@ Array.prototype.reduce = function( arr , cb  , ini ){
     return acc ;
     
 }
+
+Array.prototype.myyMap = function( arr , cb  ){
+    let ans = [];
+    let i = 0;
+    arr.forEach(element => {
+        ans[i] = cb(arr[i]);
+        i++;
+    });
+}
+
+
+Array.prototype.my = function ( arr , cb ){
+    let ans = [];
+    for( let i = 0 ; i<arr.length ; i++ ){
+
+        if( cb(arr[i]) ){
+            ans.push(arr[i])
+        }
+        
+    }
+
+    return ans ;
+}
+
+let arrr = [ 1, 2, 3,4, 5, 6];
+
+ const ans = arrr.forEach((ele) => {
+    return ele+2
+})
+
+console.log( ans );
+console.log( arrr );

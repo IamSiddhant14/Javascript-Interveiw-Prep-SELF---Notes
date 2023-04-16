@@ -8,7 +8,8 @@
 
 //Advanced system variables --> enviroment variable --> System variable --> path --> new --> C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Node.js -->paste -->ok  
 
-//Javacript could run in two enviroment one is browser enviroment Chrome v8 engine and another is node enviroment 
+//Javacript could run in two enviroment one is browser enviroment Chrome v8 engine and another is node enviroment   
+// In Browser enviroment the js engine provide us console , dom , local storage , location , storage , fetch 
 
 // we could write javascript in a HTML files with the following three method One method is by mentioning a script tag in the body Another method is by mentioning the script tag in the head and yet another method is by linking an external file JS file in both the body and head tag 
 
@@ -23,7 +24,8 @@ console.log( fristStr+secondStr);
 
 // String destruring
 console.log( ...fristStr,secondStr);
-console.log( fristStr+" "+ secondStr);
+console.log( fristStr,secondStr);
+console.log( fristStr+" "+ secondStr);  
 
 const v = fristStr.concat(secondStr);
 console.log(v);
@@ -37,9 +39,11 @@ const l = 50 ;
 const ans = l % 2 ;
 console.log(`Ampersent Sign answer is ${ans}`);
 
-//  String plus number is a string 
-console.log("My answer is " + 112 );
 
+//  String plus number is a string 
+const aa = "My answer is " + 112  ;
+console.log(aa);
+console.log(typeof(aa));
 
 //  Ternary Operator 
 let f = 7;
@@ -77,7 +81,7 @@ let email = 'siddhant';
 console.log( email.includes("d"));
 
 
-let a; //Initalization
+// let a; //Initalization
 a = 75; // declartion
 
 for( let i = 0 ; i<15 ; i++){
@@ -109,17 +113,19 @@ if( 'a' == 'a' ){
 }
 
 
-// Break , continue only s when they are directly or indirectly  inside of a loops 
+// Break , continue only work when they are directly or indirectly  inside of a loops 
 
 for( let b = 1 ; b<89 ; b++ ){
-    if( b == 3 ){
+    if( 1 == 2 ){
         console.log(b)
         break ;
     }else{
+        console.log(b)
         continue ;
     }
     
 }
+
 
 console.log(Math.round(Math.random()*100));
 
@@ -145,11 +151,11 @@ console.log( "Hello World");
  
 //variables in javascript
 // There are three variables in  which are javascript var , let ,const .
-//Javascript is a dyancmically typed language that is we dont to define type while declaring a variable
+//Javascript is a dyancmically typed language that is we dont to define type while declaring a variable unlike type script 
 
 var a ="hello a";
 
-var a = "hello A"
+var a = "hello A";
 
 // var b = "hello";
 console.log(a);
@@ -197,21 +203,36 @@ console.log( Math.round(ran* 100));
 // .innerText
 // .innerHTML
 
-const d = document.querySelector('.abc');
-const f = d.children;
-Array.from(d.forEach((ele) => {
-
-}))
-
+const d = document.querySelectorAll('.abc');
+// const f = d.children;
 
 //  kyuki forEach he kam kare ga :
+//  forEach mai kuch bhi return hai nota hai agar explisitly bhi kare tho
+
+d.forEach((ele) => {
+
+})
+
+// New type of loop for iteration in Object 
+
+let arr1 = [ 'si' , 'dd' , 'ha' , 'nt' ];
+let arr2 = [ 'sh' , 'ar' , 'ma' ];
+
+let menu = [ ...arr1 , ...arr2 ];
+
+for( let ele of menu ){
+  console.log(ele);
+}
 
 d.style.backgroundColor = 'blue';
 d.classList.add('newClass'); 
 
+
+// Every thing in the local storage is present in the form of string and nothing else 
+
 localStorage.setItem( 'hi', 'siddhant');
-localStorage.getItem();
-localStorage.updateItem('hi', 'siddha');
+localStorage.setItem("lastname", "Smith");
+localStorage.getItem("lastname");
 localStorage.removeItem('hi');
 
 // Before setting in local storage 
@@ -221,3 +242,61 @@ JSON.stringify();
 JSON.parse();
 
 XMLHttpRequest()
+
+
+// Syantx error - const a;
+// Type error  const a = 10 ;
+// a = 30 
+// Reference error - variable not avaliable for access
+
+// Call stack is present inside the js engine , and js engine is present inide the browser
+
+//  webAPI which is present in the browser contains various things like 
+//  console
+//  DOM API
+//  local Storage
+//  location
+//  setTimeout
+//  fetch
+
+// Promises and the mutation observer goes into the MicroTask queue 
+// while the other goes into the call back queue 
+
+// Example of sync code 
+const start = new Date().getTime();
+let end = start ;
+
+console.log('start');
+
+while( end<start+10000 ){
+    end = new Date().getTime();
+}
+
+console.log('end');
+
+if( response.status !== 200 ){
+    throw new Error("Mkbhd")
+}
+
+let one = 1;
+let two = 2;
+
+[ one , two ] = [ two , one ]
+
+console.log(one);
+console.log(two);
+
+//  This will conatin only unique value 
+const sett = new Set([1 ,2,3,4,1,2,3,1]);
+console.log(sett);
+
+
+console.time();
+console.timeEnd();
+
+// We can search key in Object
+
+let res = {};
+if(v in res ){
+    return res.v;
+}

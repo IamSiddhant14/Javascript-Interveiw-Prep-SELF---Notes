@@ -1,24 +1,24 @@
-
 // function expects parameters
 // The value which we pass during calling a function is called arguments 
 // In js we dont need to define the return type
 // function increases code re-use-ability
 
-function add(a, b){ //function declartion/parameters
+// function declartion/function statement
+function add(a, b){ //parameters
     // console.log(a+b);
     return a+b;
 };
 
 let sum = add( 5 ,4); //function invokation/calling/arguments, This function is alredy been called
 console.log("The sum is "+sum);
-console.log("The sum is ",sum);
+console.log(`The sum is   ${sum}`);
 
 //In javascript functions are know as frist class citizens
 //That is we can treat functions as variables in javascript
 
 //Named function expression
 
-let syaHi = function op(a){// here this "op "keyword could be used inside function "op"
+let syaHi = function op(a){// here this "op "keyword could be used only inside function "op"
     console.log(a);
 }
 
@@ -43,6 +43,7 @@ let ad = (function(a,b){
 })(10, 20);
 
 let obj = {
+
     // a : 'name',
     // h : 4,
 
@@ -62,7 +63,7 @@ let obj = {
         console.log(this)
     } ,  
 
-    d(){
+    abc(){
         console.log(this);
     }
 }
@@ -91,7 +92,7 @@ function abc (num){
     return num*num;
   }
 
-  //function Expression(Anonamus) :-
+//function Expression(Anonamus) :-
   var abcd = function(){
       console.log("abc");
   }
@@ -136,7 +137,6 @@ function demo(a , b){
     }
 }
 
-
 const holder = demo( 4 , 5 );
 // Here this function is been called upfront and the given variable is just storing the value of the returned function which need to be called
 
@@ -149,12 +149,13 @@ function newq(cb) {
 
     var len = 5;
     console.log(arguments[0]);
-
+    console.log(arguments);
     arguments[0]();
+
 }
 
 function cb(){
-    console.log(this.len);
+    console.log('this.len');
 }
 
 newq(cb);
@@ -163,10 +164,12 @@ newq(cb);
 
 // Prototype is nothing but an empty object added on a function
 
-// const arr = name  => (
-//     `welcome ${name}`
-// )
+const arr = name  => (
+    `welcome ${name}`
+)
 
+console.log(arr('sidd' , 'hi'));
+console.log(arr('sidd'));
 // welcome sdd
 
 // const arr = name  => `welcome ${name}`
@@ -237,4 +240,12 @@ abcc('siddhant');
 abcc();
 
 // After return statement code is not reachable
+
+//  Diffrene bewteen arrow function and normale function 
+
+//  syantx
+//  implicit return keyword
+//  this 
+//  'arguments' keyword
+
 

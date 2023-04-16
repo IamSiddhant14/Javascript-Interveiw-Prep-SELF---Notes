@@ -7,7 +7,9 @@ let arr = []; //array are initalized with square brackets
 //hetrogenous arrays are present in javascript
 
 let arr1 = [1,"yes",3,true,5];
-const [ num1 , boolean1 , num2 , boolean2 , num3 ] = arr1;//destruring of array
+
+//destruring of array
+const [ num1 , boolean1 , num2 , boolean2 , num3 ] = arr1;
 console.log(num1);
 console.log(num2);
 console.log(num3);
@@ -71,15 +73,19 @@ console.log(cars);
 cars.unshift(0);
 console.log(cars);
 
+// let cars = [1,2,3];
 for( let ele in cars){
     //Here cars is the name of the array
     console.log(ele,cars[ele]) // Here "ele" is the index from zero when iterating over the array
 }
 
+
 console.log(cars);
+let cars = [1,2,3];
 cars.forEach(function(ele, index){
     console.log(ele,"OP", index)
-})
+});
+
 
 // for( let key in cap){//Here cap is the name of the object
 //     console.log(key , cap[key]);// Here "ele "is the key while iterating over an object
@@ -104,10 +110,10 @@ const arr21 = ["Emil", "Tobias", "Linus"];
 
 const children = arr11.concat(arr21);
 console.log( ...arr11 , ...arr21 );
+console.log( arr11 , arr21 );
 
 console.log(children);
-
-Array(10).fill(`${name}`);
+console.log(Array(10).fill(`hi`));
 
 arr11.reverse();
 console.log(arr11);
@@ -120,6 +126,8 @@ arr1.splice(1 ,1 , 1 );
 arr.flat();
 arr.flat(2);
 arr.flat(3);
+
+// It by default sort strings
 
 arr.sort(sorting);
 

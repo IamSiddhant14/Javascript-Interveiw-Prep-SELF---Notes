@@ -5,6 +5,22 @@
 //local scope + reference to the lexical scope of parent
 //local scope + outer function scope + global scope
 
+
+// The chain of lexical enviroments(Lexical enviroment parent) is what know as a scope chain 
+
+//  ADV of closure :-
+// currying
+// once 
+// memorize
+// data hiding
+// encapsulation 
+// Module partten
+ 
+//  DISADV of closure :
+// Make system bulky overconsumption of memory 
+//   
+
+
 const name = "sharma";
 
 function my() {
@@ -29,6 +45,7 @@ function my() {
 
 const f = my();
 f();
+ 
 
 function counter() {
 
@@ -75,6 +92,23 @@ const a = (function (){
 
 })();
 
+const b = (
+    function (){
+
+        function pri (){
+            console.log('Inside private')
+        }
+
+        return {
+            publicMethod : function(){
+                pri()
+            }
+        }
+
+    }
+)()
+
+b.publicMethod();
 
 a.publicMethod();
 // a.privateMethod();
@@ -140,4 +174,118 @@ console.log(v(8));
 console.log(v(800));
 console.log(v(8000));
 console.log(v(80000));
+
+
+
+// Module parteen 
+function mp (){
+
+    function privatee(){
+        console.log('Inside privatee ');
+    }
+
+    return {
+         publicMethod : function (){
+            console.log('hi');
+            privatee();
+         }
+    }
+}
+
+const aa = mp();
+aa.publicMethod();
+
+
+//  Once
+
+function on (){
+
+    let count = 0;
+    return function (){
+
+        if( count == 0 ){
+            count++;
+            console.log('Done once');
+        }else{
+           console.log('Executed once')
+        }
+    }
+}
+
+const bb = on();
+bb();
+bb();
+bb();
+bb();
+bb();
+
+// Currying
+
+function a(b){
+    return function(c){
+        return function(d){
+            return function(e){
+               console.log(b+c+d+e);
+            }
+        }
+    }
+}
+
+a(1)(2)(3)(4);
+
+
+// Add Base 
+
+function addBase(val){
+
+  return function(a){
+     console.log(val+a);
+  }
+
+}
+
+
+const func = addBase(6);
+func(5)
+
+//  count
+
+function abc (){
+
+    let a = [];
+
+    for( let i = 0 ; i<100000000 ; i++ ){
+        a[i] = i+1 ;
+    }
+
+    return function (i){
+        console.log(a[i]) ;
+    }
+}
+
+const amazing = abc();
+amazing(123456);
+
+// private counter 
+
+function count (){
+
+    let val = 0;
+
+    function add (){
+        val += a
+    }
+
+    function sub(s){
+        val -= s;
+    }
+
+    return {
+         add ,
+         sub 
+    }
+
+}
+
+// currying , once ,  modulepartten , privatecounter 
 

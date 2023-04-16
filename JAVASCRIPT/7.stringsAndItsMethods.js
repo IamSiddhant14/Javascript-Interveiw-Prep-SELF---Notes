@@ -1,5 +1,4 @@
 // *********************************************** STRING *******************************************************
-
 //STRING METHODS 
 
 // 1.> length
@@ -24,7 +23,7 @@ console.log(str);
 // .length
 console.log(str.length);
 
-// Extracting the part of string - .slice , .splice
+// Extracting the part of string - .slice , .splice(startingIndex , deletionCount , ElementtobeAddes)
 
 let slicedStr = str.slice(3, 7);//here 7 is not been included therfore last index is excluded
 

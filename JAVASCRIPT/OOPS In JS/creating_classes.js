@@ -162,3 +162,6 @@ console.log(arr.__proto__.__proto__);
 
 // EveryThing Starts with a object prototype 
 
+// this in a class refers to the method and property present inside the constructor method 
+
+

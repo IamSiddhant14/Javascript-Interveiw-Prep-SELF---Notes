@@ -1,15 +1,13 @@
-function abc ( name = 'sidd'){
-    let count = 1;
-     console.log(`sharma${name} ${++count}`)
+const us = {
+    name : 'sidd' , 
+    rollNo : '0827ci191054',
+    ref : this ,
+    newOj : {
+        name : '738',
+        re : this
+    }
 }
 
-abc('siddhant');
-abc();
-
-let count = 1;
-function abcc ( name = 'sidd'){
-     console.log(`sharma${name} ${++count}`)
-}
-
-abcc('siddhant');
-abcc();
+console.log( us.ref)
+console.log( us.ref.name)
+console.log( us.newOj.re.name);

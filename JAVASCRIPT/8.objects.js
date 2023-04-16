@@ -23,6 +23,13 @@ let obj = {//Creating an empty object
 
 }; 
 
+let ob = {
+    name : 'sidd' ,
+    "like this vedio" : 'yes'
+}
+
+console.log( ob["like this vedio"]);
+
 //Dynamic property
 
 let color = "Green";
@@ -41,17 +48,25 @@ const obj2 ={// Itself then after that outer enviroment
 
 console.log( obj2.name);
 
-const name = 'na'
-const obj1 = {
-    [name] : 'siddhant'
+const n = 'green';
+const s = 'ht';
+
+const objj1 = {
+
+    [n] : 'white',
+    [s] : 'yell'
 }
 
-const obj3 = {
-    val : 'sharma',
-    __proto__ : obj1
+const objj2 = {
+    name : 'sidd',
+    __proto__ : objj1
 }
 
-console.log(obj3.na)
+console.log(objj2.name);
+console.log(objj2.green);
+console.log(objj2.ht);
+console.log(objj2.s);
+
 
 
 let cap = {
@@ -73,7 +88,7 @@ let cap = {
     
 }
 
-const { fristname:fname , lastname:lname , friend , placedatgoodpbc, age, placedatsbc , address:{country} , address:{city:town}}  = cap; //Destruring( names need to match in object destreing ) , renaming and nested destruring is also been done.
+const { fristname:fname , lastname:lname , friend , placedatgoodpbc, age, placedatsbc , address:{country : kk } , address:{city:town}}  = cap; //Destruring( names need to match in object destreing ) , renaming and nested destruring is also been done.
 
 const newObj = { ...cap };// creating the new object with the help of a spread operator, they both now points to diffrent object
 
@@ -173,3 +188,62 @@ let childPlane = {
 
 mainPlane.book.call(childPlane, 157 , 'aircanada' );
 console.log(childPlane.booking);
+
+function changeAgeAndReference(person) {
+    // Actual change 
+    person.age = 25;
+
+    // reassigning the reffrence to a new object , and just switch refernce old object will remain as it is 
+    person = {
+      name: 'John',
+      age: 50
+    };
+
+    return person;
+}
+
+const personObj1 = {
+    name: 'Alex',
+    age: 30
+};
+
+const personObj2 = changeAgeAndReference(personObj1);
+
+console.log(personObj1); // -> ?
+console.log(personObj2); // -> ?
+
+const us = {
+    name: 'sidd',
+    rollNo: '0827ci191054',
+    abc(){
+      console.log(this)
+    },
+    f : obc = () =>{
+        console.log(this)
+    }
+    ,
+    ref: this,
+    newOj: {
+        name: '738',
+        re: this,
+        n: {
+            r: this,
+            o: {
+                reff: this,
+                g : {
+                    name : 'op',
+                    ro : this 
+                }
+            }
+        }
+    }
+}
+
+us.abc()
+us.f();
+console.log(us.ref)
+console.log(us.newOj.re);
+console.log(us.newOj.n.r);
+console.log(us.newOj.n.o.reff);
+console.log(us.newOj.n.o.g.ro)
+console.log(us.newOj.n.o.g.ro.name)
