@@ -22,6 +22,7 @@ promise
 
 })
 
-// promise.catch(function(){
-//     console.log('Not equal');
-// })
+promise.catch(function(){
+    console.log('Not equal');
+})
+

@@ -54,6 +54,11 @@ let obj = {
     c: function (){
         console.log('c');
     },
+    // ,
+
+    // c: (){  This is not possible 
+    //     console.log('c');
+    // },
 
     f: () => {
         console.log(this)
@@ -81,6 +86,10 @@ invitation('sharma');
 
 for( let key in obj ){
     console.log( key + '->' + obj[key]() ); 
+}
+
+for( let ele of obj ){
+    console.log( ele() ); 
 }
 
 
@@ -190,7 +199,7 @@ let lower = function( str ){
 }
 
 let heigher = function ( str ){
-    return str.toUpperCase();
+    return str.toUpperCase() ;
 }
 
 const ans = function ( fun , st ){

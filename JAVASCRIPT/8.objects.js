@@ -19,7 +19,7 @@ console.log(objj);
 let obj = {//Creating an empty object
 
     name : 'siddhant',
-    classs : '7sem'
+    class : '7sem'
 
 }; 
 
@@ -33,9 +33,10 @@ console.log( ob["like this vedio"]);
 //Dynamic property
 
 let color = "Green";
+let c = "pink";
 let obj5 = {//Creating an empty object
 
-    [color] : 'siddhant',
+    [color] : c,
     classs : '7sem'
 
 }; 
@@ -159,6 +160,8 @@ function flatten( obj , parent , res ={} ){
 
 
 // when we forcefully try to convert object into string it will get converted into object-object
+const ans = String({name : 'sid'})
+console.log(ans);
 
 // const obj2 = JSON.parse(JSON.stringify(obj)) // This will create a copy of this object such that all the parents and children are also been dublicated
 
@@ -190,6 +193,7 @@ mainPlane.book.call(childPlane, 157 , 'aircanada' );
 console.log(childPlane.booking);
 
 function changeAgeAndReference(person) {
+    
     // Actual change 
     person.age = 25;
 
@@ -241,6 +245,9 @@ const us = {
 
 us.abc()
 us.f();
+
+//  All of them are resulting in global object 
+
 console.log(us.ref)
 console.log(us.newOj.re);
 console.log(us.newOj.n.r);

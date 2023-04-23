@@ -257,7 +257,6 @@ abc();
 
 // Above commented statement would not work as" var" is function scoped and not blocked scope while let and const are both block and function scoped
 
-
 {
     var b = 4;
     console.log(b);

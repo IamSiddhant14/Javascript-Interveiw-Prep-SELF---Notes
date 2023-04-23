@@ -1,12 +1,15 @@
 memorization
 debouce
 throttle
-even capturing , propogation , bubbling
+even capturing , propogation , bubbling 
+Event delegation
 oops
 infinte currying
 flatten object
 Async
+promise polyfill
 polyfill call , bind apply
 module parttens
 once with closure 
-
+map , filtre , reduce polyfill
+recursive promises

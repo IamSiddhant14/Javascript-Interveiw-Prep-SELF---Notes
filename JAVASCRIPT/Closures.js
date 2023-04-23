@@ -15,7 +15,7 @@
 // data hiding
 // encapsulation 
 // Module partten
- 
+
 //  DISADV of closure :
 // Make system bulky overconsumption of memory 
 //   
@@ -45,14 +45,14 @@ function my() {
 
 const f = my();
 f();
- 
+
 
 function counter() {
 
     var _counter = 0;
 
     function add(increment) {
-         _counter += increment; 
+        _counter += increment;
     }
 
     function retrieve() {
@@ -60,7 +60,7 @@ function counter() {
     }
 
     return {
-        add ,
+        add,
         retrieve
     }
 }
@@ -76,15 +76,15 @@ c.retrieve();// => The counter is currently at: 14
 
 //Module parttens 
 
-const a = (function (){
+const a = (function () {
 
-    function privateMethod (){
-       console.log( "From private method which is invoked from public methos ")
+    function privateMethod() {
+        console.log("From private method which is invoked from public methos ")
     }
 
     return {
 
-        publicMethod : function (){
+        publicMethod: function () {
             console.log('Form public method')
             privateMethod();
         }
@@ -93,14 +93,14 @@ const a = (function (){
 })();
 
 const b = (
-    function (){
+    function () {
 
-        function pri (){
+        function pri() {
             console.log('Inside private')
         }
 
         return {
-            publicMethod : function(){
+            publicMethod: function () {
                 pri()
             }
         }
@@ -115,15 +115,15 @@ a.publicMethod();
 
 // Execute just Once :-
 
-let veiw ;
-function once (){
+let veiw;
+function once() {
 
     let count = 0;
 
-    return function (){
-        if( count > 0 ){
-            console.log("Already pressed "+ veiw );
-        }else{
+    return function () {
+        if (count > 0) {
+            console.log("Already pressed " + veiw);
+        } else {
             veiw = " siddhant sharma";
             count++;
         }
@@ -141,12 +141,12 @@ d();
 d();
 d();
 
-const n = function createBase(a){
-    return function(b){
-        return a+b ;
+const n = function createBase(a) {
+    return function (b) {
+        return a + b;
     }
 }
- 
+
 const g = n(4);
 console.log(g(9));
 
@@ -154,16 +154,16 @@ console.log(g(9));
 // ********************* //
 
 
-function getAns(){
+function getAns() {
 
     let a = [];
 
-    for( let i =0; i<1000000 ; i++ ){
-        a[i] = i*i ;
+    for (let i = 0; i < 1000000; i++) {
+        a[i] = i * i;
     }
 
-    return function g(val){
-        return a[val] ;
+    return function g(val) {
+        return a[val];
     }
 
 }
@@ -178,17 +178,17 @@ console.log(v(80000));
 
 
 // Module parteen 
-function mp (){
+function mp() {
 
-    function privatee(){
+    function privatee() {
         console.log('Inside privatee ');
     }
 
     return {
-         publicMethod : function (){
+        publicMethod: function () {
             console.log('hi');
             privatee();
-         }
+        }
     }
 }
 
@@ -198,16 +198,16 @@ aa.publicMethod();
 
 //  Once
 
-function on (){
+function on() {
 
     let count = 0;
-    return function (){
+    return function () {
 
-        if( count == 0 ){
+        if (count == 0) {
             count++;
             console.log('Done once');
-        }else{
-           console.log('Executed once')
+        } else {
+            console.log('Executed once')
         }
     }
 }
@@ -221,11 +221,11 @@ bb();
 
 // Currying
 
-function a(b){
-    return function(c){
-        return function(d){
-            return function(e){
-               console.log(b+c+d+e);
+function a(b) {
+    return function (c) {
+        return function (d) {
+            return function (e) {
+                console.log(b + c + d + e);
             }
         }
     }
@@ -236,11 +236,11 @@ a(1)(2)(3)(4);
 
 // Add Base 
 
-function addBase(val){
+function addBase(val) {
 
-  return function(a){
-     console.log(val+a);
-  }
+    return function (a) {
+        console.log(val + a);
+    }
 
 }
 
@@ -250,42 +250,55 @@ func(5)
 
 //  count
 
-function abc (){
 
-    let a = [];
+function t() {
 
-    for( let i = 0 ; i<100000000 ; i++ ){
-        a[i] = i+1 ;
+    let arr = [];
+    console.time();
+    for (let i = 0; i < 100000; i++) {
+        arr[i] = i + 34
     }
+    console.timeEnd();
 
-    return function (i){
-        console.log(a[i]) ;
+    return function (v){
+        return arr[v]
     }
 }
 
-const amazing = abc();
-amazing(123456);
+const ne = t();
+console.log( ne(8))
 
 // private counter 
 
-function count (){
+function calc() {
 
-    let val = 0;
+    let am = 0;
 
-    function add (){
-        val += a
+    function add(val) {
+        am += val
+        console.log(am);
     }
 
-    function sub(s){
-        val -= s;
+    function sub(val) {
+        am -= val;
+        console.log(am);
     }
 
     return {
-         add ,
-         sub 
+        add,
+        sub
     }
-
 }
 
-// currying , once ,  modulepartten , privatecounter 
+const va = calc();
+
+va.add(3)
+va.add(9)
+va.sub(4)
+va.sub(3)
+
+// currying , once ,  modulepartten , privatecounter , time Saver , abstraction 
+
+
+
 

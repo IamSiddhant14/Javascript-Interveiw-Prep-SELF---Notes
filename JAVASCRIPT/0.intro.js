@@ -50,7 +50,6 @@ let f = 7;
 const result = f > 7 ? "hello" : "hi";
 console.log(result);
 
-
 // Switch Case :  
 
 const fruit = "apple";
@@ -75,8 +74,10 @@ console.log(typeof(String(23)));
 
 //  empty string (No space as well )and 0 is a false 
 console.log(typeof(Boolean(32)));
+console.log(typeof(Number('32')));
 
 
+//  This return a boolean 
 let email = 'siddhant';
 console.log( email.includes("d"));
 
@@ -113,7 +114,7 @@ if( 'a' == 'a' ){
 }
 
 
-// Break , continue only work when they are directly or indirectly  inside of a loops 
+// Break , continue only work when they are directly or indirectly inside of a loops 
 
 for( let b = 1 ; b<89 ; b++ ){
     if( 1 == 2 ){
@@ -141,7 +142,7 @@ console.log(exact)
 
 //Before node this was not possible as we were able to run javascript on the browser side only
 
-//Therefore node has provided us with this run time enviroment to run js on our systems also
+//Therefore node has provided us with this run time en viroment to run js on our systems also
 
 // The nodejs runtime enviroment does not understang the DOM manipulation when running the file only in the system itself instead of rendering it on the browser
 
@@ -192,7 +193,6 @@ console.log(c);
 // a<=b
 // a>= b
 
-
 console.log(Math)
 
 //  To genrate number bw 1-100;
@@ -218,10 +218,17 @@ d.forEach((ele) => {
 let arr1 = [ 'si' , 'dd' , 'ha' , 'nt' ];
 let arr2 = [ 'sh' , 'ar' , 'ma' ];
 
+const me = arr1.concat(arr2);
+console.log(me);
+
 let menu = [ ...arr1 , ...arr2 ];
 
 for( let ele of menu ){
   console.log(ele);
+}
+
+for( let ele in menu ){
+  console.log(ele , menu[ele]);
 }
 
 d.style.backgroundColor = 'blue';
@@ -299,4 +306,25 @@ console.timeEnd();
 let res = {};
 if(v in res ){
     return res.v;
+}
+
+
+throw Error("you ran into an error");
+
+// new Error('hi')  THis is not an error 
+
+// 'throw defeat' reffers to error as it have the 'throw 'keyword  in it and it will go inside the catch block 
+
+// When 'throw' keyword is there then only error is there 
+
+// e.target refers to the entire tag now we can take out e.target.value , e,target.tagName , e.target.href , e.target.style , e.target.className from it
+
+// Lodash libary in javascript have many prebuild usefull functions so keep a look on it
+
+try{
+
+}catch(err){
+
+}finally{
+
 }

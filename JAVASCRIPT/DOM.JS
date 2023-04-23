@@ -13,8 +13,11 @@ document.querySelectorAll('#p');
 // we will get a nodelist as a result of it 
 const a = document.querySelectorAll('.p');
 
-// We can use forEach for nodeList :-
+//  This will convert the nodellist into an array
+Array.from(document.querySelectorAll('p'));
 
+
+// We can use forEach for nodeList :-
 a.forEach((ele) => {
     console.log(ele);
 });
@@ -57,7 +60,7 @@ b.classList.replace();
 //  This will give all the children to the parent div result is an html collection 
 
 b.children;
-//  To converthtml Collection to n array we do the folloeing
+//  To converthtml Collection to na array we do the folloeing
 
 Array.from(b.children);
 
@@ -66,7 +69,7 @@ b.parentElement;
 
 b.previousElementSibling;
 b.nextElementSibling;
-
+ 
 b.addEventListener( 'click' , (e) => {
     console.log(e.target)
     e.target.style.color = 'red';
@@ -103,7 +106,6 @@ d.addEventListener('mousemove' , () => {
 
 d.addEventListener('click' , (e) => {
     // Like reloading while submiting form 
-
     e.preventDefault();
 })
 
@@ -129,4 +131,6 @@ a.addEventListener('keyup', (e) => {
 
 document.createChild();
 document.appendChild()
+
+// e.target refers to the entire tag now we can take out e.target.value , e,target.tagName , e.target.href , e.target.style from it 
 

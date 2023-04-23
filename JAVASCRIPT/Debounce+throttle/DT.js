@@ -2,22 +2,63 @@
 
 // Debounce happens when the diffrence bewteen the two key strokes/ event is more than the mentioned timing , it is method to limit the calling of a function for optimiztion 
 
-let count = 0;
+// Debounce 
+// {
 
-function getData() {
-    console.log("Fetching Data" + count++);
-}
-
-function doSomeMagic(cb, delay) {
-
-    let time;
-
-    return function () {
-        if (time) clearTimeout(time);
-        time = setTimeout(() => {
-            cb();
-        }, delay);
+    function callMe() {
+        console.log('called');
     }
-}
 
-const BetterFunction = doSomeMagic(getData, 300);
+    let count = 0;
+    let callIsMade = 0;
+
+    function doSomeMagic(call, time) {
+
+        let t;
+
+        return function () {
+            console.log(count++);
+
+            if (t) clearTimeout(t);
+            t = setTimeout(() => {
+                console.log(`${callIsMade++} times Api called `);
+                call()
+            }, time);
+        }
+
+    }
+
+    const betterFunction = doSomeMagic(callMe, 800);
+
+
+
+// }
+
+
+
+// Throttle 
+
+
+
+
+// function callMe() {
+//     console.log('called');
+// }
+
+// let count = 0;
+// let callIsMade = 0;
+
+// function doSomeMagic(call, time) {
+
+//     return function () {
+//         console.log(count++);
+
+//         setTimeout(() => {
+//             console.log(`${callIsMade++} times Api called `);
+//             call()
+//         }, time);
+//     }
+
+// }
+
+// const betterFunction = doSomeMagic(callMe, 800);

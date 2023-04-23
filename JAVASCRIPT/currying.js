@@ -21,16 +21,18 @@ function evalute(ope) {
     }
 }
 
-
 evalute(sum)(3)(4);
 //Infinte currying
 
-function out(a) {
-    return function (b) {
-        if (b) return out(a + b);
-        return a;
+function infi(a){
+    return function (b){
+        if( b) return infi(a+b);
+        return a ;
     }
 }
+
+const ans = infi(2)(3)(4)(5)();
+console.log( ans );
 
 //partial Application
 
