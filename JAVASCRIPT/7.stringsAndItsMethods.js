@@ -1,4 +1,5 @@
 // ************************* STRING ***********************************
+
 //STRING METHODS 
 
 // 1.> length
@@ -29,14 +30,19 @@ let slicedStr = str.slice(3, 7);//here 7 is not been included therfore last inde
 
 console.log(slicedStr);
 
-let subString = str.substr( 3, 5);// here 3 is the starting index and 5 is the number of elements we to trvel from 3
-console.log(subString); 
+let t = "Hello world!";
+let result = t.substring(1, 4);// here 1 is the starting index and 4 is not been included 
+console.log(result); 
 
 //replace method for string 
 let sayHello = "Hello mukesh";
 let saybye = sayHello.replace('Hello', 'bye');//The word you need to replace and which word would you replace it with
 
 console.log(saybye);
+
+const g = +req.params.id;
+// string to number 
+console.log(typeof(g)) 
 
 //To upper case or lower case
 let text1 = "hello world" ;
@@ -60,7 +66,6 @@ console.log(text);
 let trimmedText = text.trim();
 console.log(trimmedText);
 
-
 const Myname = 'Siddhant';
 console.log(Myname[0]);
 
@@ -68,15 +73,20 @@ console.log( Myname.indexOf('n'));
 console.log( Myname.lastIndexOf('n'));
 
 let arrColors = "Brown blue black ";
+
 //  Sting -> Array 
 console.log(arrColors.split('blue'));
 console.log(arrColors.split(' '));
+
+//  Array -> string
+str.join(",")
+str.join("")
 
 console.log( typeOf(Myname) );
 
 // string + number = string 
 
-//  == - no type checking
+//  == - no type checking 
 //  === -  Type checking as well 
 
 const st = "22";
@@ -91,4 +101,5 @@ console.log(Boolean(age));
 
 let email = 'siddhant';
 console.log( email.includes("d"));
+email.startsWith('sidd');
 

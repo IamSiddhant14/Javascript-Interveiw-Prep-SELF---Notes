@@ -1,9 +1,17 @@
+Array.prototype.myMap = function(cb){
 
-let arrr = [ 1, 2, 3,4, 5, 6];
+    let temp = [];
 
- const ans = arrr.forEach((ele) => {
-    return ele+2
-})
+    for( let i = 0 ; i<this.length ; i++ ){
+        return temp.push(cb( this[i] , i ) , this )
+    }
 
-console.log( ans );
-console.log( arrr );
+    return temp  ;
+
+}
+
+const a = arr.myMap( function(f){
+   return ++f;
+} );
+
+console.log(a)

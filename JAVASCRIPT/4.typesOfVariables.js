@@ -1,11 +1,12 @@
 //There are two categories of data type in javascript :
 
-// var was present from the birth of javascript while the let and const where introduced in ES6 version of javascri
+// var was present from the birth of javascript while the let and const where introduced in ES6 version of javascript
+
 // There are 7 data type in javascript string , number , boolean , null ( This need to be provided ) , undefined ( It is been assigned automatically ) ,  object , symbols  
 
 //  Name of variable should be in camel case mostly 
 
-// 1.> primitive - Number ,String , boolean ---------- stack per he store hota hai or reference variable bhi stack per he banta hai
+// 1.> primitive - Number ,String , boolean , Symbol , Null , Undefined ---------- stack per he store hota hai or reference variable bhi stack per he banta hai
 
 // 2.> Reference - Array ,Objects ,Function ---------- heap per store hota hai and stack per reference variable banta hai 
 //   YT : https://www.youtube.com/watch?v=lW_erSjyMeM
@@ -19,12 +20,12 @@
 
 //There is nothing like char in javascript there are only string 
 
-//javascript is an synchrounus and a single threaded language
+//javascript is an synchrounus and a single threaded language 
 
-// JavaScript is single threaded and has a synchronous execution model.
+// JavaScript is single threaded and has a synchronous execution model. 
 // Single threaded means that one command is being executed at a time.
 // Synchronous means one at a time i.e. one line of code is being executed at time in order the code appears. 
-// So in JavaScript one thing is happening at a time
+// So in JavaScript one thing is happening at a time  
 
 // When we are trying to access an variable which is not been defined yet then it would result in an reference error / not defined ( thats means its not been defined in the memory )
 
@@ -44,7 +45,10 @@
 // assigning value to "a" as null
 // a= null;
 // console.log(a);
-//javascript is an dyanimically typed language that is dont need to specifie the type of variable as such // semicolon is not compulsory in javascript // Javascript is a single threaded language not multithreaded  //javascript is a sychronus language by default.  Although the callback function might appear to execute asychrousely but in actualle they are also been executed sys
+
+// JavaScript is both synchronous and asynchronous. By default, JavaScript is single-threaded and synchronous, meaning that it executes code in a sequential order, one line at a time. However, JavaScript also provides mechanisms for asynchronous programming using callbacks, promises, and async/await.javascript is an dyanimically typed language 
+
+// When JavaScript encounters an asynchronous operation, such as fetching data from a server or reading a file, it doesn't block the execution of the entire program. Instead, it initiates the operation and continues executing the remaining code. Once the asynchronous operation completes, it triggers a callback function or resolves a promise to handle the result.
 
 //let and const :-
 //frist problem of var : redeclartion //That is 
@@ -54,6 +58,7 @@
 // console.log(a);
 
 // But in case of "let" keyword we could not redeclare the same variable where was this was allowed in var //but here re-defining / reasigning is allowed , same as that in var keyword javascript
+
 //redeclaring(not allowed) will result in an syantax error and redefing/reassigning (allowed) this two are two diffrent things
 
 // let b = 2;
@@ -97,9 +102,7 @@ if (10 % 2 == 0) {
 
 console.log(c); //no error , only the let and const variables are block scoped and the var type variable isnt block scoped but it is function scoped 
 
-
 //Here error as let has its existance within the block only that is block scope
-
 
 if (10 % 2 == 0) {
     // Here this k doesnt exist after this block
@@ -158,6 +161,8 @@ if (true) {
     var a = 399;
     console.log(a);
 }
+
+
 // u();
 console.log(a);
 
@@ -304,3 +309,17 @@ if( true ){
 }
 
 console.log(g);
+
+for( let i = 0 ; i<5 ; i++ ){
+ setTimeout(() => {
+    console.log(i)
+ } , i*1000 );
+    
+}
+
+for( var i = 0 ; i<5 ; i++ ){
+ setTimeout(() => {
+    console.log(i)
+ } , i*1000 );
+    
+}

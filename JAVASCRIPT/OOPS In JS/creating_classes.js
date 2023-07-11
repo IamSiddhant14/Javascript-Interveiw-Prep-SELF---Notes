@@ -27,7 +27,7 @@ Person.breakMethod = function () {
     console.log("This is break ");
 }
 
-// class GreatPerson extends Person{
+// class GreatPerson extends Person {
 
 //     attitude = 'cool';
 
@@ -108,11 +108,6 @@ const b = new BankAccount('Pra', 5678);
 
 // *****************************************************************   FUNCTIONAL WAY(ES-5)    ***********************************************************************
 
-
-
-
-
-
 function Car(color, model) {
 
     // This function will return an object when used as a constructor 
@@ -163,6 +158,7 @@ console.log(arr.__proto__.__proto__);
 class ca {
    
     name ;
+
     constructor( n , t ){
        this.name = n;
        this.t = t;
@@ -211,5 +207,7 @@ console.log(bc.prop);
 console.log(bc.meth);
 console.log(bc.name);
 console.log(bc.__proto__);
+console.log( ca.prototype == mc.__proto__ );
 console.log(caaa.prototype);
+
 

@@ -1,4 +1,3 @@
-
 /* cascading style sheet */
 
 /* We could incoperate css in our website using the following methods
@@ -11,103 +10,108 @@
 
 /* Webscrapping - Extracting important data from some other website for the sake of our use is called using webscrapping  */
 
-@media ( min-width: 300px ) and ( max-width : 600px ){
-    .main{
-        background-color:red;
+@media (min-width: 300px) and (max-width : 600px) {
+    .main {
+        background-color: red;
     }
- 
 }
-        /*  Many element could have same lass but diffrent elemnt could not have same id that is class is unnique but id arent  */
-        /* In style tag we right CSS */
-        /* css always require an semicolon(;) at the end of each property so as to ensure property break and start an new property */
-        /* Css selector */
 
-        /* Universal selector */
+#ooo > li {
+   color: blue;
+}
 
 
-        /* Element Selector */
-        h1{
-            color: blue;
-        }
+/*  Many element could have same class but diffrent elemnt could not have same id that is class is unnique but id arent  */
+/* In style tag we right CSS */
+/* css always require an semicolon(;) at the end of each property so as to ensure property break and start an new property */
+/* Css selector */
 
-        /* Decendant Selector */
-        /* That is one tag inside another not neccasery to be next to each other */
-        /* Here it mean that change the colour of all the list item present inside div tag */
-        /* here "div ol" will also work */
-        div li  {
-            color :pink;
-        }
+/* Universal selector */
 
-        /* Children Selector */
+* {
+    color: rgb(0, 0, 0);
+}
 
-        /* Here each tag should be next to each other , like div tag then just next tag should be the h1 tag after that next tag should be the span tag*/
 
-        /* Here it mean that change the color and font of all the span tag which is a children too the h1 tag and also the div is the grand parent to the span tag such that one tag should be the next to the other*/
-        
-        div > h1 > span{
-            color: rgb(73, 255, 6);
-            font-size: xx-large;
-        }
+/* Element Selector */
+h1 {
+    color: blue;
+}
 
-        /* class selector */
-        .class1{
-            color:black;
-        }
+/* Decendant Selector */
+/* That is one tag inside another not neccasery to be next to each other */
+/* Here it mean that change the colour of all the list item present inside div tag */
+/* here "div ol" will also work */
 
-        .class2{
-            color: brown;
-        }
+div li {
+    color: pink;
+}
 
-        /* Multiple classes on same elements */
-        /* NO space in bewteen */
-        /* Any tag having both the classes (exclusive not allowed) will be following the below listed property ,Although order of property dont matter*/
+/* Children Selector */
 
-        .class3.class4 {
-            color: chartreuse;
-            font-style: italic ;
-        }
+/* Here each tag should be next to each other , like div tag then just next tag should be the h1 tag after that next tag should be the span tag*/
 
-        /* Classes Decendant Selector */
+/* Here it mean that change the color and font of all the span tag which is a children too the h1 tag and also the div is the grand parent to the span tag such that one tag should be the next to the other*/
 
-        .c1 span .c2{
-            color:green;
-            font-size: xx-large;   
-        }
+div>h1>span {
+    color: rgb(73, 255, 6);
+    font-size: xx-large;
+}
 
-        /* Id selector ,id are unique , never use id for styling purposes instead use it for identification purposes #Industry rule*/
-        
-        #one{
-            color: darkorchid;
-        }
- 
-        /* Attribute Selector */
-        /* Here single parenthesis is important */
+/* class selector */
+.class1 {
+    color: black;
+}
 
-        input[type = 'button']{
-            /* input[type = 'button'] Here this will also work*/
+.class2 {
+    color: brown;
+}
 
-            background-color:aqua;
+/* Multiple classes on same elements */
+/* NO space in bewteen */
+/* Any tag having both the classes (exclusive not allowed) will be following the below listed property ,Although order of property dont matter*/
 
-        }
+.class3.class4 {
+    color: chartreuse;
+    font-style: italic;
+}
 
-        input[value = 'Select me']{
-            /* input[type = 'button'] Here this will also work*/
+/* Classes Decendant Selector */
 
-            background-color: pink;
+.c1 span .c2 {
+    color: green;
+    font-size: xx-large;
+}
 
-        }
+/* Id selector ,id are unique , never use id for styling purposes instead use it for identification purposes #Industry rule*/
 
-        /* Combination */
-        #the-one>.c1.c2{
-            color: rgb(41, 230, 24);
-        }
+#one {
+    color: darkorchid;
+}
 
-        #the-one#the-two{
-            font-style: italic ;
-            text-decoration: underline;
-        }
+/* Attribute Selector */
+/* Here single parenthesis is important */
 
-        .main{
-            background-color: rgb(0, 0, 0);
-        }
-      
+input[type='button'] {
+    /* input[type = 'button'] Here this will also work*/
+    background-color: aqua;
+}
+
+input[value='Select me'] {
+    /* input[type = 'button'] Here this will also work*/
+    background-color: pink;
+}
+
+/* Combination */
+#the-one>.c1.c2 {
+    color: rgb(41, 230, 24);
+}
+
+#the-one#the-two {
+    font-style: italic;
+    text-decoration: underline;
+}
+
+.main {
+    background-color: rgb(0, 0, 0);
+}

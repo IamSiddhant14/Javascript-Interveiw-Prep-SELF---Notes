@@ -13,12 +13,12 @@ console.log( sum);
 // 20
 
 
-const transactions = [1000, 3000, 4000, 2000, -898, 3800, -4500]
+const transactions = [1000, 3000, 4000, 2000, , 3800,]
 
 let balance = transactions.filter(function(amount){
        return amount >0
 }).reduce(function(sum, amount){//
       return sum+amount//This is returned to the next iteration with updated sum value to sum+amount
- } , 0)//here this 0 is the accumulator 
+ } , 89)//here this 0 is the accumulator 
 
  console.log(balance);

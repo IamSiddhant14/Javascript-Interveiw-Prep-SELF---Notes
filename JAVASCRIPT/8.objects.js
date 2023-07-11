@@ -6,6 +6,7 @@ const objj = new Object();
 objj.a = "hello";
 console.log(objj);
 
+
 // const b = new obj({
 //    c: "hi";
 // })
@@ -24,8 +25,10 @@ let obj = {//Creating an empty object
 }; 
 
 let ob = {
+
     name : 'sidd' ,
     "like this vedio" : 'yes'
+
 }
 
 console.log( ob["like this vedio"]);
@@ -34,6 +37,7 @@ console.log( ob["like this vedio"]);
 
 let color = "Green";
 let c = "pink";
+
 let obj5 = {//Creating an empty object
 
     [color] : c,
@@ -89,6 +93,7 @@ let cap = {
     
 }
 
+
 const { fristname:fname , lastname:lname , friend , placedatgoodpbc, age, placedatsbc , address:{country : kk } , address:{city:town}}  = cap; //Destruring( names need to match in object destreing ) , renaming and nested destruring is also been done.
 
 const newObj = { ...cap };// creating the new object with the help of a spread operator, they both now points to diffrent object
@@ -98,7 +103,7 @@ console.log(newObj);
 console.log(address);
 console.log(lastname);
 
-// if in case the name of the variable is invaild or in case we are accessing the prop of the object dynamically then we are suppose to ue only square bracket notation only and dot notation will give a error in this case
+// if in case the name of the variable is invaild or in case we are accessing the prop of the object dynamically then we are suppose to use only square bracket notation only and dot notation will give a error in this case
 
 // Object k inside jo function hote hai usko hum method bolte hai 
 
@@ -132,6 +137,10 @@ for(key in cap){//Here cap is the name of the object
     console.log(key ,' -->', cap[key]);// Here "ele "is the key while iterating over an object
 }
 
+for( let ele of cap ){
+    console.log(ele);
+}
+
 for( let key in cap){//Here cap is the name of the object
     console.log(key ,' -->', cap[key]);// Here "ele "is the key while iterating over an object
 }
@@ -140,6 +149,16 @@ for( let key in cap){//Here cap is the name of the object
 // need to use the squre bracket notation and dot notation wont work here
 
 // Arrays , Functions , Promises , objects are all objects
+
+
+const v = Object.assign( {} , cap ); // Pass by reference
+console.log(v);    
+
+if( 'name' in obj ){
+    console.log('Yes The name key exist in this objec')
+}else{
+    console.group(' Key name does not exist in object ');
+}
 
 function flatten( obj , parent , res ={} ){
 
@@ -159,8 +178,9 @@ function flatten( obj , parent , res ={} ){
 }
 
 
+
 // when we forcefully try to convert object into string it will get converted into object-object
-const ans = String({name : 'sid'})
+const ans = String({name : 'sid'});
 console.log(ans);
 
 // const obj2 = JSON.parse(JSON.stringify(obj)) // This will create a copy of this object such that all the parents and children are also been dublicated
@@ -216,11 +236,15 @@ const personObj2 = changeAgeAndReference(personObj1);
 console.log(personObj1); // -> ?
 console.log(personObj2); // -> ?
 
+function a(){
+    console.log('Inside function' , this )
+}
+
 const us = {
     name: 'sidd',
     rollNo: '0827ci191054',
     abc(){
-      console.log(this)
+      a(); // function inside of another function will result global scope 
     },
     f : obc = () =>{
         console.log(this)
@@ -236,21 +260,42 @@ const us = {
                 reff: this,
                 g : {
                     name : 'op',
-                    ro : this 
+                    ro : this ,
+                    f:{
+                        a : function(){
+                            console.log(this);
+                        }
+                    }
                 }
             }
         }
     }
 }
 
-us.abc()
-us.f();
+// us.abc()
+// us.f();
 
 //  All of them are resulting in global object 
 
+// console.log(us.name)
+// console.log(us.abc())
 console.log(us.ref)
-console.log(us.newOj.re);
-console.log(us.newOj.n.r);
-console.log(us.newOj.n.o.reff);
-console.log(us.newOj.n.o.g.ro)
-console.log(us.newOj.n.o.g.ro.name)
+// console.log(us.newOj.re);
+// console.log(us.newOj.n.r);
+// console.log(us.newOj.n.o.reff);
+// console.log(us.newOj.n.o.g.ro)
+// console.log(us.newOj.n.o.g.ro.name)
+// console.log(us.newOj.n.o.g.f.a())
+
+
+let cal = {
+
+    read(){
+        this.a = prompt(" Entre value of a" , 0 );
+        this.b = prompt(" Entre Value of B" , 0 );
+    },
+
+    sum(){
+        console.log()
+    }
+}

@@ -5,21 +5,24 @@
 //local scope + reference to the lexical scope of parent
 //local scope + outer function scope + global scope
 
-
 // The chain of lexical enviroments(Lexical enviroment parent) is what know as a scope chain 
 
-//  ADV of closure :-
+// ADV of closure :-
 // currying
 // once 
 // memorize
 // data hiding
 // encapsulation 
 // Module partten
+// privatecounter 
+// time Saver 
+
+
+
 
 //  DISADV of closure :
 // Make system bulky overconsumption of memory 
 //   
-
 
 const name = "sharma";
 
@@ -85,9 +88,10 @@ const a = (function () {
     return {
 
         publicMethod: function () {
-            console.log('Form public method')
+            console.log('Form public method');
             privateMethod();
         }
+
     }
 
 })();
@@ -260,13 +264,13 @@ function t() {
     }
     console.timeEnd();
 
-    return function (v){
+    return function (v) {
         return arr[v]
     }
 }
 
 const ne = t();
-console.log( ne(8))
+console.log(ne(8))
 
 // private counter 
 
@@ -297,8 +301,34 @@ va.add(9)
 va.sub(4)
 va.sub(3)
 
+
+
+
 // currying , once ,  modulepartten , privatecounter , time Saver , abstraction 
 
+let calc = {
+
+    read() {
+        this.a = +prompt(" a = ", 0);
+        this.b = +prompt(" b = ", 0);
+    },
+
+    add() {
+        console.log(this.a + this.b);
+    },
+
+    mult() {
+        console.log(this.a * this.b);
+    }
+
+}
+
+calc.read();
+calc.add();
+calc.mult();
+
+// currying , once, private counter , abstraction , memoixation , cal , time 
 
 
+// currying , module partten , cal , abstraction , time
 

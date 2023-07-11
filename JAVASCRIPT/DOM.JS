@@ -1,6 +1,6 @@
 // Node Js dont understand document or dom , only the js engine understand it 
 
-//  Select and then change the element  
+//  Select and then change the element   
 
 console.log(document);
 console.log(document.url);
@@ -14,25 +14,22 @@ document.querySelectorAll('#p');
 const a = document.querySelectorAll('.p');
 
 //  This will convert the nodellist into an array
+console.log(a);
 Array.from(document.querySelectorAll('p'));
 
-
 // We can use forEach for nodeList :-
+
 a.forEach((ele) => {
     console.log(ele);
 });
 
 document.querySelector('.p');
 
-
 document.getElementsByTagName('p');
 document.getElementsByTagName('div');
 document.getElementsByTagName('a');
 
-
 document.getElementById('fbi');
-
-
 document.getElementsByClassName('fdi');
 
 
@@ -60,6 +57,7 @@ b.classList.replace();
 //  This will give all the children to the parent div result is an html collection 
 
 b.children;
+
 //  To converthtml Collection to na array we do the folloeing
 
 Array.from(b.children);
@@ -85,17 +83,16 @@ b.addEventListener( 'click' , (e) => {
 
 //  Event prapogation
 const d = document.querySelector('ul');
+
 d.addEventListener('click' , (e) => {
     if( e.target.nodeName == 'LI'){
         e.target.remove();
     }
 })
 
-
 d.addEventListener('copy' , (e) => {
   alert('Dont copy');
-})
-
+});
 
 //Mouse move
 
@@ -106,7 +103,8 @@ d.addEventListener('mousemove' , () => {
 
 d.addEventListener('click' , (e) => {
     // Like reloading while submiting form 
-    e.preventDefault();
+    e.preventDefault();// Submit button
+    e.stopPropagation();// Bubbling
 })
 
 
@@ -129,7 +127,6 @@ a.addEventListener('keyup', (e) => {
     e.target ;
 });
 
-document.createChild();
 document.appendChild()
 
 // e.target refers to the entire tag now we can take out e.target.value , e,target.tagName , e.target.href , e.target.style from it 

@@ -5,8 +5,10 @@
 
 //****************************************************   WATCH THIS VEDIO : https://www.youtube.com/watch?v=iLWTnMzWtj4     ******************************************************* */
 
+
 // var a = 2;
 // var b = 3;
+
 
 // function add(m,n){
 //     var sum = m+n
@@ -21,10 +23,8 @@
 
 var n = 2;
 function square(n){
- 
     let square = n*n
     return square
-
 }
 
 let square1 = square(n)//Function calling is also know as Function invocation 
@@ -42,9 +42,3 @@ console.log(square2)
 // For variables ,now there values are been provided to the them which was having undefined as there value before and for function invocation NOW FORMATION OF A NEW EXECUSTION CONTEXT FOR THAT PARTICULAR FUNCTION INVOCATION where the variables present inside that function gets memory allocated frist and intially there value is undefined and after the completion the CODE EXECUTION takes place where now to the variables ge there original value is been assigned to it
 
 // Return statement states to return the control of the function from the place where the function was been invoked
-
-
-
-
-
- 

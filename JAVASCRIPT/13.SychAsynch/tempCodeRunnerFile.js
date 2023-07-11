@@ -1,62 +1,68 @@
-function register(){
-  return new Promise((resolve , reject) => {
-      resolve("Register End ");
-  })
-}
-
-function sendMail(){
-    return new Promise((resolve , reject) =>{
-        resolve("Email End ");
+function a() {
+    return new Promise((resolve, reject) => {
+        resolve('a');
     })
 }
+function b() {
+    return new Promise((resolve, reject) => {
+        resolve('b');
+    });
 
-function login(){
-    return new Promise((resolve , reject) => {
-        resolve("login End "); 
-    })
+}
+function c() {
+    return new Promise((resolve, reject) => {
+        resolve('c');
+    });
+}
+function d() {
+    return new Promise((resolve, reject) => {
+        resolve('d');
+    });
 }
 
-function getUserData(){
-    return new Promise((resolve , reject) => {
-        resolve("getUserData End ");
-    })
-}
 
-function displayUserData(){
-        return new Promise((resolve , reject) => {
-            reject("displayUserData End err");
-        })
-}
-
-//  This will also result in piramide dome structure because of which we use return keyword instead 
-
-// register().then((res) => {
-//     console.log(res);
-//     sendMail().then((res) => {
-//         console.log(res);
-//         login().then((res) => {
-//             console.log(res);
-//             getUserData().then((res) => {
-//                 console.log(res);
-//                 displayUserData().then((res) => {
-//                     console.log(res);
-//                 }).catch((err) => {
-//                     console.log(err);
-//                 })
+// a().then((e) => {
+//     console.log(e);
+//     b().then((e) =>{
+//         console.log(e) ;
+//         c().then((e) => {
+//             console.log(e);
+//             d().then((e)=> {
+//                 console.log(e)
 //             })
 //         })
 //     })
-// })
-
-
-// const sub = new Promise((resolve , reject) => {
-//    resolve("Done with it ")
 // });
 
-// const sub1 = Promise.resolve("Hello")
-// const sub2 = Promise.reject("Hello")
+// a().then((e) => {
+//     console.log(e);
+//     return b();
+// })
+// .then((e) => {
+//     console.log(e);
+//     return c();
+// })
+// .then((e) =>{
+//     console.log(e);
+//     return d();
+// })
+// .then((e)=>{
+//     console.log(e)
+// });
 
+a().then(b).then(c).then(d).catch((err) => {
+    console.log(err);
+});
 
-register().then(sendMail).then(login).then(getUserData).then(displayUserData).catch((err)=>{
-    console.log("We fucked up", err)
-})
+function e(){
+    return new Promise((resolve , reject) => {
+        resolve('Hi')
+    })
+}
+
+function f(){
+    return new Promise((resolve , reject ) => {
+        resolve('hii')
+    })
+}
+

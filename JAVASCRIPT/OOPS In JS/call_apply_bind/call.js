@@ -46,3 +46,25 @@ var fun =  function( a , b ){
 
 let ans = fun.bind( obj2 , [9 , 4]);
 ans();
+
+
+Function.prototype.myCall = function( context={} , ...args ){
+
+    if( typeof(this) !== 'function' ){
+        throw new Error();
+    }
+
+    context.fn = this ;
+    context.fn(...args);
+
+}
+
+Function.prototype.myCall = function( context={} , ...args ){
+
+    if( typeOf(this) != 'function' ){
+        throw new Error ;
+    }
+
+    context.fn = this;
+    context.fn(...args);
+}

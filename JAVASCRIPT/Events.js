@@ -20,14 +20,11 @@ e.stopPropagation();
 // Here in this instead of adding event to each element we will add the listner to parent it-self and then there after determine which elemnet is been clicked 
 
 div.addEventListner( 'click' , (e) => {
+
     if(e.target.tagName === 'SPAN'){
         window.location.href += '/' + e.target.className ;
     }
+    
 })
 
-
-
-
-
-
-
+// e.preventDefault is used on anchor taag to prevent reload

@@ -10,6 +10,7 @@ Async
 promise polyfill
 polyfill call , bind apply
 module parttens
+this
 once with closure 
 map , filtre , reduce polyfill
 recursive promises

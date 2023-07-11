@@ -28,7 +28,7 @@
 // displayUserData();
 
 
-// Function Callback chaining(Might result in call back hell)
+// Function Callback chaining (Might result in call back hell)
 
 // function register(send){
 //   console.log("Register End ");
@@ -166,7 +166,7 @@ register().then((res) => {
 //     console.log(err);
 // });
 
-// Async Await
+// Async Await 
 
 // function register(){
 //   return new Promise((resolve , reject) => {
@@ -229,14 +229,15 @@ register().then((res) => {
 // 1.> 
 
 // If anyone of the promise fail this is going to fail
-
+//  Initialized , 
 // Promise.all([
 
 //     register(),
 //     sendMail(),
 //     login()
-// //    list of all the statements returning a promise
-// ]).then((res) =>{
+//    list of all the statements returning a promise\
+
+// ]).then((res) => {
 //     console.log(res)
 // }).catch((err) =>{
 //  console.log(err)
@@ -283,7 +284,7 @@ const ss = new Promise((resolve , reject) => {
 
 ss.then((res) => console.log(res)).catch((err) => console.log(err));
  
-const short = Promise.resolve("Done with the promise ");
+const short = Promise.resolve(" Done with the promise ");
 
 short.then((res) => {
     console.log(res);
@@ -330,20 +331,18 @@ function resolveRecursive(listOfPromise){
 
     const pr = listOfPromise.shift();
     pr.then((res) => console.log(res)).catch((res) => console.log(res));
-
+ 
     resolveRecursive(listOfPromise);
 
 }
 
 resolveRecursive(listOfPromise);
 
-// 
-
 // The sync code which is present inside the async code is been executed first , independt of the order in which they are present 
 
 //  If reject is not passes by promise it will go inside the resolve part 
 
-//  If a string or anything thing else except a reject is there then it will go inside the" then "block 
+//  If a string or anything thing else except a reject is there then it will go inside the " then " block 
 
 // 'throw defeat' reffers to error as it have the 'throw 'keyword  in it and it will go inside the catch block 
 
@@ -358,3 +357,5 @@ try{
 }finally{
 
 }
+
+

@@ -1,52 +1,53 @@
-// const memo = (cb) => {
+function call(j){
 
-//     let cache = {};
+    let v = 1 ;
 
-//     return function(...args){
-//         var n = args[0];
-//         if( n in cache){
-//             return cache[n];
-//         }else{
-//             var result = cb(n);
-//             cache[n] = result ;
-//             return result;
-//         }
+    for( let i=0 ; i<j ; i++ ){
+        v = v * i;
+    }
 
-//     }
+    return v ;
+}
 
-// }
 
-let memo = (cb) => {
+function memo( cb ){
 
-    let res = {};
-    return function(...args){
+    let cache = {} ;
+
+    return function (...args){
 
         let v = args[0];
-        if(v in res ){
-           return res.v;
+       
+        if( v in cache ){
+
+           console.log(" I was present in Cache ")
+            return cache[v];
+
         }else{
-           res.v = cb(v);
-           return res.v;
+
+            console.log(" Pushed into the cache ")
+            const ans = cb(v);
+            cache[v] = ans ;
+            console.log(cache)
+            return ans;
+
         }
+
     }
+
+
 }
 
 
-function memo( ){
+console.time()
 
+const a =memo(call);
+console.log(a(100));
+console.log(a(9));
+console.log(a(89));
+console.log(a(89));
+console.log(a(34));
+console.log(a(100));
 
-    let res = {} ;
+console.timeEnd();
 
-    return function(){
-
-        let v = arguments[0];
-
-        if( v in res ){
-            return res.v ;
-        }else{
-            let a = cb(v);
-            res.v = a ;
-            return a;
-        }
-    }
-}

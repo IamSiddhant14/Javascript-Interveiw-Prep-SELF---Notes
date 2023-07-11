@@ -2,6 +2,8 @@
     return a + b;
 }
 
+
+
 function add(a) {
     return function (b) {
         return a + b;
@@ -9,7 +11,6 @@ function add(a) {
 }
 
 add(3)(7);
-
 
 function evalute(ope) {
     return function (a) {
@@ -20,6 +21,9 @@ function evalute(ope) {
         }
     }
 }
+
+
+
 
 evalute(sum)(3)(4);
 //Infinte currying
@@ -56,3 +60,21 @@ function eval(v) {
 
 
 // Polyfill
+
+
+function sum(a){
+   return function(b){
+     return function(c){
+        return function(d){
+            console.log( a , b , c , d  );
+        }
+    }
+   }
+}
+
+function sum(a){
+    return function( b , c , d ){
+        console.log(a , b, c, d, );
+    }
+}
+

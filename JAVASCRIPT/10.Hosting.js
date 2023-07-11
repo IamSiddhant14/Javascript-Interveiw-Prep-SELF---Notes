@@ -14,8 +14,8 @@ function greet(){
       console.log('Hello') 
 }
 
-greet()
-console.log(a)
+greet();
+console.log(a);
 
 // ***********************************************************************
 //NORMALE CASE FOR LET

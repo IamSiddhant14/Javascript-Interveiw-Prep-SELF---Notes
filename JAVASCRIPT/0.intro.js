@@ -19,7 +19,7 @@
 
 let fristStr = "Hello 1";
 let secondStr = "World 1";
-
+ 
 console.log( fristStr+secondStr);
 
 // String destruring
@@ -36,8 +36,13 @@ let fullName = `I awant to become ${fristStr} ${secondStr} `;
 console.log(fullName);
 
 const l = 50 ;
+
 const ans = l % 2 ;
+// reminder 
+const ans1 = l / 2 ; 
+// answer is 25
 console.log(`Ampersent Sign answer is ${ans}`);
+console.log(`Ampersent Sign answer is ${ans1}`);
 
 
 //  String plus number is a string 
@@ -48,6 +53,10 @@ console.log(typeof(aa));
 //  Ternary Operator 
 let f = 7;
 const result = f > 7 ? "hello" : "hi";
+const resultt = f > 7 ? "hello" : null ;
+const resulttt = f > 7 && "hello" ;
+console.log(resulttt);
+console.log(resultt);
 console.log(result);
 
 // Switch Case :  
@@ -55,11 +64,11 @@ console.log(result);
 const fruit = "apple";
 
 switch (fruit) {
-
     case 'mango': console.log("Mango"); break;
     case 'apple': console.log('Apple'); break;
     default: console.log("default");
 }
+
 
 const Myname = 'siddhant';
 console.log( typeof(Myname) );
@@ -68,6 +77,9 @@ console.log( typeof(Myname) );
 
 console.log( 2 == '2');//  == - no type checking
 console.log( 2 === '2');//type checking in case of "==="
+
+// Object ko compare based on address karte hai so asnwer is false as both of them are diffrent object
+console.log( {} === {} );
 
 // Type conversion
 console.log(typeof(String(23)));
@@ -79,14 +91,19 @@ console.log(typeof(Number('32')));
 
 //  This return a boolean 
 let email = 'siddhant';
+// This returns true or false 
 console.log( email.includes("d"));
 
-
 // let a; //Initalization
-a = 75; // declartion
 
-for( let i = 0 ; i<15 ; i++){
+a = 75; // declartion , default type of this type is var 
+console.log(a);
+
+for( let i = 0 ; i<=15 ; i++){
     console.log(`hello ${i}`);
+    console.log('hello' , i );
+    console.log('hello' + i );
+    console.log('hello '.concat(i));
 }
 
 let j = 1;
@@ -136,13 +153,15 @@ const currentTime = new Date();
 console.log(currentTime)
 const exact = new Date().getTime();
 const exact1 = new Date().getDate();
-console.log(exact)
+console.log(exact1)
+
+console.log( new Date().getTime());
 
 //Node has given us an enviroment through which we are able to run javascript code in our system itself
 
 //Before node this was not possible as we were able to run javascript on the browser side only
 
-//Therefore node has provided us with this run time en viroment to run js on our systems also
+//Therefore node has provided us with this run time enviroment to run js on our systems also
 
 // The nodejs runtime enviroment does not understang the DOM manipulation when running the file only in the system itself instead of rendering it on the browser
 
@@ -193,18 +212,19 @@ console.log(c);
 // a<=b
 // a>= b
 
-console.log(Math)
+console.log(Math);
 
 //  To genrate number bw 1-100;
 const ran = Math.random();
 console.log( Math.round(ran* 100));
+
 
 // There is a diffrence bewteen 
 // .innerText
 // .innerHTML
 
 const d = document.querySelectorAll('.abc');
-// const f = d.children;
+// const f = d.children; Yeah node list return karta hai isko array may convert Array.from() say karte hai 
 
 //  kyuki forEach he kam kare ga :
 //  forEach mai kuch bhi return hai nota hai agar explisitly bhi kare tho
@@ -222,10 +242,14 @@ const me = arr1.concat(arr2);
 console.log(me);
 
 let menu = [ ...arr1 , ...arr2 ];
+console.log(menu);
 
 for( let ele of menu ){
   console.log(ele);
 }
+
+var arr = [ 1 , 2, 3 ];
+console.log(typeof(arr));
 
 for( let ele in menu ){
   console.log(ele , menu[ele]);
@@ -234,7 +258,6 @@ for( let ele in menu ){
 d.style.backgroundColor = 'blue';
 d.classList.add('newClass'); 
 
-
 // Every thing in the local storage is present in the form of string and nothing else 
 
 localStorage.setItem( 'hi', 'siddhant');
@@ -242,13 +265,15 @@ localStorage.setItem("lastname", "Smith");
 localStorage.getItem("lastname");
 localStorage.removeItem('hi');
 
+
 // Before setting in local storage 
 JSON.stringify();
 
 // After extracting from local storage 
 JSON.parse();
 
-XMLHttpRequest()
+
+XMLHttpRequest();
 
 
 // Syantx error - const a;
@@ -270,7 +295,7 @@ XMLHttpRequest()
 // while the other goes into the call back queue 
 
 // Example of sync code 
-const start = new Date().getTime();
+const start = new Date().getTime(); 
 let end = start ;
 
 console.log('start');
@@ -279,11 +304,13 @@ while( end<start+10000 ){
     end = new Date().getTime();
 }
 
+
 console.log('end');
 
 if( response.status !== 200 ){
-    throw new Error("Mkbhd")
+    throw new Error("Mkbhd");
 }
+
 
 let one = 1;
 let two = 2;
@@ -297,17 +324,22 @@ console.log(two);
 const sett = new Set([1 ,2,3,4,1,2,3,1]);
 console.log(sett);
 
-
 console.time();
 console.timeEnd();
 
 // We can search key in Object
+// No, keys in JavaScript objects are not always strings. In JavaScript, object keys can be either strings or symbols. where symbol are nothing but immutable key's
 
-let res = {};
-if(v in res ){
-    return res.v;
+let res = {
+
+    a : 'frrf',
+    v : 'qefdq'
+
+};
+
+if( 'v' in res ){
+    console.log(res.v) ;
 }
-
 
 throw Error("you ran into an error");
 
@@ -328,3 +360,40 @@ try{
 }finally{
 
 }
+
+// The major diffrence b/w map and forEach is that in map chaining is possible but not in forEach also in forEach we could not return anyting from it which is possible in Map , forEach modifies the original array while in the case Map a all togethar new Array is been returned
+
+// null is been assigned to a variable while for undefined it comes when its not been allocated to any value 
+
+var a = null ;
+console.log(a);
+
+var a ;
+console.log(a);
+
+console.log(b) // not defined
+
+
+typeof(null) // Object
+typeof(undefined) // undefined
+
+// global scope , function scope , block scope 
+
+
+function learing(){
+
+// function learing(...args){
+    
+    // console.log(args) output : [ 1, 2, 4 ]
+
+    // arguments is a dedicated keyword
+
+    console.log(arguments);
+    console.log(arguments[0]);
+    console.log(arguments[1]);
+
+    // console.log(argum[1]); This will not work 
+
+}
+
+learing( 1, 2 , 4)
