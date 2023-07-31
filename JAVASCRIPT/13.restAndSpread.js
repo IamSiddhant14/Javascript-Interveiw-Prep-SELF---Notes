@@ -13,7 +13,7 @@ function d(...nums){//rest , rest parameter must be the last one , rest is alway
 }
   
   let nums = [ 1 ,2 ,3 ,4 ,5 ];
-  d(...nums);//spread
+  d(...nums);//spread 
 
   let nums2 = [ ...nums ];
   nums[3] = 9;
