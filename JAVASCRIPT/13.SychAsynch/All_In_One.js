@@ -58,13 +58,14 @@
 // register(sendMail);
 
 
-// Promises
+// Promises 
 
 function register(){
   return new Promise((resolve , reject) => {
       resolve("Register End ");
   })
 }
+
 
 function sendMail(){
     return new Promise((resolve , reject) =>{
@@ -115,8 +116,8 @@ function displayUserData(){
 //    resolve("Done with it ")
 // });
 
-// const sub1 = Promise.resolve("Hello")
-// const sub2 = Promise.reject("Hello")
+// const sub1 = Promise.resolve("Hello");
+// const sub2 = Promise.reject("Hello");
 
 
 // register().then(sendMail).then(login).then(getUserData).then(displayUserData).catch((err)=>{
@@ -125,7 +126,7 @@ function displayUserData(){
 
 register().then((res) => {
     console.log(res);
-    return sendMail()
+    return sendMail();
 })
 .then((res) => {
     console.log(res);
@@ -146,12 +147,11 @@ register().then((res) => {
     console.log(err);
 })
 
+fetch('').then((res) => console.log(res) ; return res.json());
 
-
-
-// fetch('https://fakestoreapi.com/products/1').then((data) =>{
-//     return data.json() ;
-// }).then((val) => console.log(val)).catch((err) => console.log(err));
+fetch('https://fakestoreapi.com/products/1').then((data) => {
+    return data.json() ;
+}).then((val) => console.log(val)).catch((err) => console.log(err)); 
 
 
 // async function result(){
@@ -200,19 +200,14 @@ register().then((res) => {
 // }
 
 // async function b (){
-
 //     try{
-
 //         await register();
 //         await sendMail();
 //         await login();
 //         await getUserData();
 //         await displayUserData();
-
 //     }catch(err){
-
 //         console.log("Error",err);
-
 //     }
    
 // }//This async funtion also returns a promise 
@@ -235,7 +230,7 @@ register().then((res) => {
 //     register(),
 //     sendMail(),
 //     login()
-//    list of all the statements returning a promise\
+//    list of all the statements returning a promise
 
 // ]).then((res) => {
 //     console.log(res)

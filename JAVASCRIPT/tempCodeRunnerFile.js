@@ -1,10 +1,20 @@
-  let a = [ 1 , 2,3 ,4 ];
+function privateCounter(){
 
-  let b = { f : 'f' , g : 'g' , k : 'k '}
+    let count = 1;
 
+    function add(){
+        ++count;
+    }
 
-  let f= {...b};
-  console.log(f);
+    function sub(){
+        count--;
+    }
 
-  let k = [...a];
-  console.log(k)
+    return {
+        add , sub , count
+    }
+}
+
+const a = privateCounter();
+a.add();
+console.log(a.count);

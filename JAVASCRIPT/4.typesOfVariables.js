@@ -16,7 +16,9 @@
 // variable
 // loops
 // if else
-// let var const
+// let var const 
+
+// Global scope , Block scope , function scope  
 
 //There is nothing like char in javascript there are only string 
 
@@ -46,7 +48,7 @@
 // a= null;
 // console.log(a);
 
-// JavaScript is both synchronous and asynchronous. By default, JavaScript is single-threaded and synchronous, meaning that it executes code in a sequential order, one line at a time. However, JavaScript also provides mechanisms for asynchronous programming using callbacks, promises, and async/await.javascript is an dyanimically typed language 
+// JavaScript is both synchronous and asynchronous. By default, JavaScript is single-threaded and synchronous, meaning that it executes code in a sequential order, one line at a time. However, JavaScript also provides mechanisms for asynchronous programming using callbacks, promises, and async/await.javascript is an dyanimically typed language eg : async await , promises , callbacks .
 
 // When JavaScript encounters an asynchronous operation, such as fetching data from a server or reading a file, it doesn't block the execution of the entire program. Instead, it initiates the operation and continues executing the remaining code. Once the asynchronous operation completes, it triggers a callback function or resolves a promise to handle the result.
 
@@ -66,7 +68,7 @@
 //This will result in an error // let b = "hello"; // console.log(b);
 // This is possible in case of let and var 
 // b=4; //redefiningF
-// console.log(b);
+// console.log(b);   
 
 //Whether the number is prime or not
 // let flag = true;
@@ -118,7 +120,7 @@ if (10 % 2 == 0) {
 //Const
 
 const d = 10;
-// d = 2;
+// d = 2; 
 // const e ;
 // here "e" is value as undefined and now since it is of type const we couldnt re-define it to lets say" e=8" 
 // means now we could neither reasign nor redeclared the variable
@@ -258,7 +260,7 @@ function abc() {
 }
 
 abc();
-// console.log(a);
+console.log(a);
 
 // Above commented statement would not work as" var" is function scoped and not blocked scope while let and const are both block and function scoped
 
@@ -273,7 +275,6 @@ console.log(b);
 // The above statemnt is only valid when the scope of both of them are same like a block and ablock etc .
 
 // we could not access let and const before initalization as they are present in a temporal deadzone so one could not access it before declaring its value 
-
 
 let a = 2;
 console.log(a);
@@ -314,7 +315,6 @@ for( let i = 0 ; i<5 ; i++ ){
  setTimeout(() => {
     console.log(i)
  } , i*1000 );
-    
 }
 
 for( var i = 0 ; i<5 ; i++ ){

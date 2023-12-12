@@ -54,7 +54,7 @@ const val2 = arr.reduce((acc, curr) => {
 // Polyfill of map 
 
 Array.prototype.mymap = function( this , cb ){ 
-
+    
     let temp = [];
     for( let i = 0; i<this.length ; i++ ){
        temp.push(cb(this[i]));

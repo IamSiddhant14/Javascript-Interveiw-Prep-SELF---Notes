@@ -1,4 +1,4 @@
-// function expects parameters
+// function expects parameters 
 // The value which we pass during calling a function is called arguments 
 // In js we dont need to define the return type
 // function increases code re-use-ability
@@ -10,7 +10,9 @@ function add(a, b) { //parameters
     return a + b;
 };
 
-let sum = add(5, 4); //function invokation/calling/arguments, This function is alredy been called
+//function invokation/calling/arguments, This function is alredy been called
+let sum = add(5, 4); 
+
 console.log("The sum is " + sum);
 console.log("The sum is ", sum);
 console.log(`The sum is  ${sum}`);
@@ -18,14 +20,14 @@ console.log(`The sum is  ${sum}`);
 //In javascript functions are know as frist class citizens
 //That is we can treat functions as variables in javascript
 
-//Named function expression
+//Named function expression`
 
 let syaHi = function op(a) {// here this "op "keyword could be used only inside function "op"
     console.log(a);
 }
 
 syaHi("b");
-
+ 
 //Anonynmus function expression
 
 let syaHii = function (a) {
@@ -34,9 +36,7 @@ let syaHii = function (a) {
 
 syaHi("b");
 
-
 // Anonynmus function are offen been passed in as a callback or assigned to a variable as well  
-
 
 //IIFE  ( Immediately invoked function expression ) Auto calling
 
@@ -82,7 +82,6 @@ let obj = {
         console.log(this);
     }
 }
-
 
 
 let invitation = function (name = "Siddhant") {
@@ -144,7 +143,6 @@ f(4);//argument
 // function passes inside another function is an callback function
 
 //Arrow function
-
 const g = (m) => {
     return (m * m);// when returning one statemnt in an arrow function we will not require return statement
 }
@@ -168,12 +166,10 @@ holder();
 var len = 4;
 
 function newq(cb) {
-
-    var len = 5;
+    var len = 5; 
     console.log(arguments[0]);
     console.log(arguments);
     arguments[0]();
-
 }
 
 function cb() {
@@ -182,9 +178,9 @@ function cb() {
 
 newq(cb);
 
-// whenever a new function is being created in JavaScript by default it adds a property called prototype in it.
+// whenever a new function is being created in JavaScript by default it adds a property called prototype in it. 
 
-// Prototype is nothing but an empty object added on a function
+// Prototype is nothing but an empty object added on a function 
 
 const arr = name => (
     `welcome ${name}`
@@ -192,7 +188,8 @@ const arr = name => (
 
 console.log(arr('sidd', 'hi'));
 console.log(arr('sidd'));
-// welcome sdd
+
+// welcome sidd
 
 // const arr = name  => `welcome ${name}`
 
@@ -233,10 +230,6 @@ compli('sid')(69);
 
 //  settimeout
 
-function callMe(name) {
-    console.log(`Call me ${name}`);
-}
-
 const id = setTimeout(callMe, 5000, 'siddhant');
 clearTimeout(id);
 
@@ -261,7 +254,7 @@ function abcc(name = 'sidd') {
 abcc('siddhant');
 abcc();
 
-// After return statement code is not reachable
+// After return statement code is not reachable 
 
 //  Diffrene bewteen arrow function and normale function 
 
@@ -269,4 +262,10 @@ abcc();
 //  implicit return keyword
 //  this inside of an object 
 //  'arguments' keyword which is possible in normale function but not in an arrow function 
-// 
+
+
+
+
+
+
+

@@ -5,29 +5,29 @@
 // Debounce 
 // {
 
-function callMe() {
-    console.log('called');
-}
+// function callMe() {
+//     console.log('called');
+// }
 
-let count = 0;
-let callIsMade = 0;
+// let count = 0;
+// let callIsMade = 0;
 
-function doSomeMagic(call, time) {
+// function doSomeMagic(call, time) {
 
-    let t;
+//     let t;
 
-    return function () {
-        console.log(count++);
-        if (t) clearTimeout(t);
-        t = setTimeout(() => {
-            console.log(`${callIsMade++} times Api called `);
-            call()
-        }, time);
-    }
+//     return function () {
+//         console.log(count++);
+//         if (t) clearTimeout(t);
+//         t = setTimeout(() => {
+//             console.log(`${callIsMade++} times Api called `);
+//             call()
+//         }, time);
+//     }
 
-}
+// }
 
-const betterFunction = doSomeMagic(callMe, 800);
+// const betterFunction = doSomeMagic(callMe, 800);
 
 
 
@@ -36,9 +36,6 @@ const betterFunction = doSomeMagic(callMe, 800);
 
 
 // Throttle 
-
-
-
 
 // function callMe() {
 //     console.log('called');
@@ -67,10 +64,8 @@ function doSomeMagic( fn ,  delay ){
     let time ;
 
     return function( ){
-
-        const v = arguments[0];
-        // const v = fn ;
         
+        const v = arguments[0];        
         if( time ) clearTimeout(time);
 
         time = setTimeout(() => {

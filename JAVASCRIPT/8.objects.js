@@ -1,11 +1,10 @@
 //Objects - They exist in key value pair 
-//key && value collectively is know as property
+//key && value collectively is know as property 
 //keys are by default string if written in double quotes or not in object 
 
 const objj = new Object();
 objj.a = "hello";
 console.log(objj);
-
 
 // const b = new obj({
 //    c: "hi";
@@ -18,17 +17,13 @@ console.log(objj);
 // when object is been forcefully converted into a string it will result in object 
 
 let obj = {//Creating an empty object
-
     name : 'siddhant',
     class : '7sem'
-
 }; 
 
 let ob = {
-
     name : 'sidd' ,
     "like this vedio" : 'yes'
-
 }
 
 console.log( ob["like this vedio"]);
@@ -39,25 +34,21 @@ let color = "Green";
 let c = "pink";
 
 let obj5 = {//Creating an empty object
-
     [color] : c,
-    classs : '7sem'
-
+    class : '7sem'
 }; 
 
-const obj2 ={// Itself then after that outer enviroment 
+const obj2 = {// Itself then after that outer enviroment 
     schlorNo : "564",
     __proto__:obj
 }
 
-
-console.log( obj2.name);
+console.log(obj2.name);
 
 const n = 'green';
 const s = 'ht';
 
 const objj1 = {
-
     [n] : 'white',
     [s] : 'yell'
 }
@@ -75,7 +66,6 @@ console.log(objj2.s);
 
 
 let cap = {
-
     fristname : 'Siddhant',//string
     lastname : "sharma",//string
     friends : [ 'Siddhant-55', 'no-one', 8], //Array
@@ -94,16 +84,16 @@ let cap = {
 }
 
 
-const { fristname:fname , lastname:lname , friend , placedatgoodpbc, age, placedatsbc , address:{country : kk } , address:{city:town}}  = cap; //Destruring( names need to match in object destreing ) , renaming and nested destruring is also been done.
+const { fristname:fname , lastname:lname , friend , placedatgoodpbc , age, placedatsbc , address:{country : kk } , address:{city:town}}  = cap; //Destruring( names need to match in object destreing ) , renaming and nested destruring is also been done.
 
-const newObj = { ...cap };// creating the new object with the help of a spread operator, they both now points to diffrent object
+const newObj = { ...cap };
+// creating the new object with the help of a spread operator, they both now points to diffrent object
 
 console.log(newObj);
-
 console.log(address);
 console.log(lastname);
 
-// if in case the name of the variable is invaild or in case we are accessing the prop of the object dynamically then we are suppose to use only square bracket notation only and dot notation will give a error in this case
+// if in case the name of the variable is invaild or in case we are accessing the prop of the object dynamically then we are suppose to use only square bracket notation only and dot notation will give a error in this case 
 
 // Object k inside jo function hote hai usko hum method bolte hai 
 
@@ -146,10 +136,10 @@ for( let key in cap){//Here cap is the name of the object
 }
  
 // Objects having key value starting from "-" or any numbet is consider invalid to acces that key in an object we
+
 // need to use the squre bracket notation and dot notation wont work here
 
 // Arrays , Functions , Promises , objects are all objects
-
 
 const v = Object.assign( {} , cap ); // Pass by reference
 console.log(v);    
@@ -168,10 +158,8 @@ function flatten( obj , parent , res ={} ){
 
         if( typeof obj[key] == 'object' ){
             flatten( obj[key] , prop , res )
-
         }else{
             res[key] = obj[key]
-
         }
     }
     
@@ -199,12 +187,13 @@ let mainPlane = {
     }
 };
 
+mainPlane.book("a", "b" );
+
 let childPlane = {
     airplane : 'fly canada',
     type : 'booing',
     booking:[]
-}
-
+} 
 
 // mainPlane.book(1234 , 'air canada');
 // console.log(mainPlane.booking);
@@ -213,10 +202,10 @@ mainPlane.book.call(childPlane, 157 , 'aircanada' );
 console.log(childPlane.booking);
 
 function changeAgeAndReference(person) {
-    
+
     // Actual change 
     person.age = 25;
-
+    
     // reassigning the reffrence to a new object , and just switch refernce old object will remain as it is 
     person = {
       name: 'John',
@@ -244,7 +233,8 @@ const us = {
     name: 'sidd',
     rollNo: '0827ci191054',
     abc(){
-      a(); // function inside of another function will result global scope 
+        // console.log(this);
+    //   a(); // function inside of another function will result global scope 
     },
     f : obc = () =>{
         console.log(this)
@@ -280,12 +270,12 @@ const us = {
 // console.log(us.name)
 // console.log(us.abc())
 console.log(us.ref)
-// console.log(us.newOj.re);
-// console.log(us.newOj.n.r);
-// console.log(us.newOj.n.o.reff);
-// console.log(us.newOj.n.o.g.ro)
-// console.log(us.newOj.n.o.g.ro.name)
-// console.log(us.newOj.n.o.g.f.a())
+console.log(us.newOj.re);
+console.log(us.newOj.n.r);
+console.log(us.newOj.n.o.reff);
+console.log(us.newOj.n.o.g.ro)
+console.log(us.newOj.n.o.g.ro.name)
+console.log(us.newOj.n.o.g.f.a())
 
 
 let cal = {

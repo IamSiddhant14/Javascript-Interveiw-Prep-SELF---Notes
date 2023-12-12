@@ -1,24 +1,21 @@
-//Closures
+//Closures 
 
-// INNER FUNCTION PRESERVES THE SCOPE CHAIN(Lexical enviroment = local scope + outer scope) OF THE OUTER FUNCTION EVEN WHEN THE OUTER FUNCTION IS BEEN POPPED OF THE EXECUSTON STACK
+// INNER FUNCTION PRESERVES THE SCOPE CHAIN(Lexical enviroment = local scope + outer scope) OF THE OUTER FUNCTION EVEN WHEN THE OUTER FUNCTION IS BEEN POPPED OF THE EXECUSTON STACK 
 
-//local scope + reference to the lexical scope of parent
-//local scope + outer function scope + global scope
+//local scope + reference to the lexical scope of parent  
+//local scope + outer function scope + global scope   
 
 // The chain of lexical enviroments(Lexical enviroment parent) is what know as a scope chain 
 
 // ADV of closure :-
 // currying
-// once 
+// once /
 // memorize
 // data hiding
 // encapsulation 
 // Module partten
 // privatecounter 
 // time Saver 
-
-
-
 
 //  DISADV of closure :
 // Make system bulky overconsumption of memory 
@@ -35,7 +32,6 @@ function my() {
 
     return b;
 
-}
 
 // Create Base:-
 
@@ -332,3 +328,53 @@ calc.mult();
 
 // currying , module partten , cal , abstraction , time
 
+function f(){
+    return function (a){
+        return function (b){
+            return function (c){
+                console.log(a, b, c )
+            }
+        }
+    }
+}
+
+f()(2)(3)(4);
+
+// MP
+
+const g = (
+
+     function ab(){
+       console.log("here")
+     }
+
+     return {
+        f : function(){
+            ab()
+        }
+     }
+)()
+
+
+// currying , once , memo , module partten , private counter 
+
+function privateCounter(){
+
+    let count = 1;
+
+    function add(){
+        ++count;
+    }
+
+    function sub(){
+        count--;
+    }
+
+    return {
+        add , sub , count
+    }
+}
+
+const a = privateCounter();
+a.add();
+console.log(a.count);

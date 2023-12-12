@@ -16,8 +16,8 @@
     }
 }
 
-#ooo > li {
-   color: blue;
+#ooo>li {
+    color: blue;
 }
 
 
@@ -53,7 +53,7 @@ div li {
 
 /* Here it mean that change the color and font of all the span tag which is a children too the h1 tag and also the div is the grand parent to the span tag such that one tag should be the next to the other*/
 
-div>h1>span {
+div > h1 > span {
     color: rgb(73, 255, 6);
     font-size: xx-large;
 }

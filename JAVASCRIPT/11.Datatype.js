@@ -50,9 +50,3 @@ console.log(e , typeof(e))
 // WeakMap : new WeakMap()
 // WeakSet : new WeakSet()  
 
-
-
-
-
-
-

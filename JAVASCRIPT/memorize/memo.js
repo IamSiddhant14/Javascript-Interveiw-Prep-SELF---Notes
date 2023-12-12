@@ -1,36 +1,32 @@
-function call(j){
+function call(j) {
 
-    let v = 1 ;
+    let v = 1;
 
-    for( let i=0 ; i<j ; i++ ){
+    for (let i = 0; i < j; i++) {
         v = v * i;
     }
 
-    return v ;
+    return v;
 }
 
 
-function memo( cb ){
+function memo(cb) {
 
-    let cache = {} ;
+    let cache = {};
 
-    return function (...args){
+    return function (...args) {
 
         let v = args[0];
-       
-        if( v in cache ){
 
-           console.log(" I was present in Cache ")
+        if (v in cache) {
+            console.log(" I was present in Cache ")
             return cache[v];
-
-        }else{
-
+        } else {
             console.log(" Pushed into the cache ")
             const ans = cb(v);
-            cache[v] = ans ;
+            cache[v] = ans;
             console.log(cache)
             return ans;
-
         }
 
     }
@@ -41,7 +37,7 @@ function memo( cb ){
 
 console.time()
 
-const a =memo(call);
+const a = memo(call);
 console.log(a(100));
 console.log(a(9));
 console.log(a(89));

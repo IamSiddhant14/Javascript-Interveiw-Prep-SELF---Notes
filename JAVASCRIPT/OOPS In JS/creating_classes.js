@@ -136,8 +136,9 @@ Car.prototype.companey = "Honda"
 
 let instance1 = new Car('black', 2023);
 let instance2 = new Car('blue', 2020);
+
 instance2.startEngine();
-console.log(instance2.companey)
+console.log(instance2.companey);
 
 console.log(instance2.__proto__);
 console.log(instance2.__proto__.isPrototypeOf(instance1));
@@ -156,58 +157,58 @@ console.log(arr.__proto__.__proto__);
 // this in a class refers to the method and property present inside the constructor method 
 
 class ca {
-   
-    name ;
 
-    constructor( n , t ){
-       this.name = n;
-       this.t = t;
+    name;
+
+    constructor(n, t) {
+        this.name = n;
+        this.t = t;
     }
 
-    meth(){
+    meth() {
         console.log('Hi')
     }
 
-    get getting(){
-        return `hi ${name}` ;
+    get getting() {
+        return `hi ${name}`;
     }
 
-    set setting(val){
+    set setting(val) {
         return this.name = val
     }
 }
 
 
-ca.funcccc = function(){
+ca.funcccc = function () {
     console.log('This is a  static function');
 }
 
 class caaa extends ca {
 
-    prop ; 
+    prop;
 
-    constructor( a , b, c ){
-        super( a , b );
+    constructor(a, b, c) {
+        super(a, b);
         this.prop = c;
     }
 
 }
 
-const mc = new ca( 4 , 3 );
-console.log(mc.name) ;
+const mc = new ca(4, 3);
+console.log(mc.name);
 mc.meth();
 console.log(mc.getting);
-console.log(mc.setting = 'green' ) ;
+console.log(mc.setting = 'green');
 console.log(mc.__proto__);
 console.log(ca.prototype);
 
-const bc = new caaa( 4 , 5 , 6 );
+const bc = new caaa(4, 5, 6);
 
 console.log(bc.prop);
 console.log(bc.meth);
 console.log(bc.name);
 console.log(bc.__proto__);
-console.log( ca.prototype == mc.__proto__ );
+console.log(ca.prototype == mc.__proto__);
 console.log(caaa.prototype);
 
 

@@ -1,5 +1,4 @@
 // Node Js dont understand document or dom , only the js engine understand it 
-
 //  Select and then change the element   
 
 console.log(document);
@@ -60,7 +59,7 @@ b.children;
 
 //  To converthtml Collection to na array we do the folloeing
 
-Array.from(b.children);
+Array.from(b.children); 
 
 //  This will give parent to the  children div 
 b.parentElement;   
@@ -127,7 +126,7 @@ a.addEventListener('keyup', (e) => {
     e.target ;
 });
 
-document.appendChild()
+document.appendChild();
 
 // e.target refers to the entire tag now we can take out e.target.value , e,target.tagName , e.target.href , e.target.style from it 
 

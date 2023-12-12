@@ -9,7 +9,6 @@
 // var a = 2;
 // var b = 3;
 
-
 // function add(m,n){
 //     var sum = m+n
 //     return sum 
@@ -23,7 +22,7 @@
 
 var n = 2;
 function square(n){
-    let square = n*n
+    let square = n*n;
     return square
 }
 

@@ -3,7 +3,6 @@
 }
 
 
-
 function add(a) {
     return function (b) {
         return a + b;
@@ -21,8 +20,6 @@ function evalute(ope) {
         }
     }
 }
-
-
 
 
 evalute(sum)(3)(4);
@@ -77,4 +74,3 @@ function sum(a){
         console.log(a , b, c, d, );
     }
 }
-

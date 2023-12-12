@@ -145,32 +145,32 @@
 
 
 
-function a(val){
+function a(val) {
 
-    return new Promise((resolve , reject ) => {
-        resolve("From a"+val);
+    return new Promise((resolve, reject) => {
+        resolve("From a" + val);
     })
 }
 
-function b(val){
+function b(val) {
 
-    return new Promise((resolve , reject ) => {
+    return new Promise((resolve, reject) => {
         resolve(`From b ${val}`)
     })
 }
 
-function c(val){
+function c(val) {
 
-    return new Promise((resolve , reject ) => {
+    return new Promise((resolve, reject) => {
         // resolve(`From c ${val}`);
-        reject('rejected from c', val )
+        reject('rejected from c', val)
     })
 }
 
-function d(val){
-    return new Promise((resolve , reject ) => {
+function d(val) {
+    return new Promise((resolve, reject) => {
         // resolve(" Rejected from D " , val);
-        reject(" Rejected from D " , val);
+        reject(" Rejected from D ", val);
     })
 }
 
@@ -205,9 +205,9 @@ function d(val){
 // })
 
 
-async function calllll(){
+async function calllll() {
 
-    try{
+    try {
 
         const k = await a('aa');
         console.log(k);
@@ -221,18 +221,18 @@ async function calllll(){
         const x = await d('dd');
         console.log(x)
 
-    }catch(err){
+    } catch (err) {
 
-        console.log( err , 'err' );
+        console.log(err, 'err');
 
     }
-   
+
 }
 
 calllll().then(() => {
     console.log('All good')
 }).catch((err) => {
-    console.log('err',err );
+    console.log('err', err);
 })
 
 
@@ -259,3 +259,67 @@ calllll().then(() => {
 // }).catch((err) => {
 //     console.log(err);
 // })
+
+
+Array.prototype.myMap = function (cb) {
+    let arr = [];
+    for (let i = 0; i < this.length; i++) {
+        arr[i] = cb(this[i]);
+    }
+    return arr;
+}
+
+Array.prototype.myFilter = function (cb) {
+    let arr = [];
+    for (let i = 0; i < this.length; i++) {
+        if (cb(this[i])) {
+            arr.push(this[i])
+        }
+    }
+    return arr;
+}
+
+Array.prototype.myReduce = function (cb, inital) {
+
+    let a = inital;
+    for (let i = 0; i < this.lenght; i++) {
+        a += cb(this[i]);
+    }
+    return a;
+}
+
+// return , chaining , array , 
+
+function memo(cb) {
+    let obj = {};
+    return function (k) {
+        if (k in obj) {
+            return obj[k]
+        } else {
+            obj[k] = cb(k);
+        }
+    }
+}
+
+function curr(a) {
+    return function (b) {
+        if (b) {
+            curr(a * b);
+        }
+        return a;
+    }
+}
+
+Function.prototype.call = function (context = {}, ...args) {
+    if (typeof this !== Function) {
+        throw new Error('we fu')
+    }
+    context.fn = this;
+    context.fn(...args);
+}
+
+
+
+fetch('https://fakestoreapi.com/products')
+    .then((res) => res.json())
+    .then(json => console.log(json))

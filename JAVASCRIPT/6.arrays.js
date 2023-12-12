@@ -10,10 +10,9 @@ let arr = []; //array are initalized with square brackets
 
 //destruring of array
 const [num1, boolean1, num2, boolean2, num3] = arr1;
-console.log(num1);
+console.log(num1); 
 console.log(num2);
 console.log(num3);
-
 console.log(arr1);
 
 // spread // This is pass by value 
@@ -81,12 +80,15 @@ for (let ele in cars) {
 
 
 console.log(cars);
+
 let cars = [1, 2, 3];
 
-cars.forEach(function (ele, index) {
+const af = cars.forEach(function (ele, index) {
     console.log(ele, "OP", index)
+    return 2;
 });
 
+console.log(af);
 
 // for( let key in cap){//Here cap is the name of the object
 //     console.log(key , cap[key]);// Here "ele "is the key while iterating over an object
@@ -95,15 +97,23 @@ cars.forEach(function (ele, index) {
 //MultiDimensional Array
 
 let dish = [" apple", "bannna", 'stra'];
-console.log(dish.join(","));
+const g = dish.join(",");
+console.log(typeof(g));
+
+const f = g.split(",");
+console.log(typeof(f) , f  , g);
+
 
 // Array to string 
 console.log(dish.join(""));
 
+// String to Array
+console.log(dish.split(","))
+
 // Output is a string 
 console.log(typeof(dish.join(",")));//string
 
-let matrix = [
+let matrix = [ 
     [1.2, 3],
     [4, 5, 6],
     [7, 8, 9]
@@ -119,10 +129,13 @@ const children = arr11.concat(arr21);
 console.log(children);
 
 console.log(...arr11, ...arr21);
+console.log([...arr11, ...arr21]);
 console.log([...arr11], [...arr21]);
 console.log(arr11, arr21);
 
 console.log(children);
+// Array.from() this is genrally used to convert nodelist to array : Array.from(neww);
+
 console.log(Array(10).fill(`hi`));
 
 arr11.reverse();
@@ -132,7 +145,6 @@ let arr1 = [ 1, 2, 4, 6,4, 6,3 , 5, 7 ,6, 4, 3];
 
 const a = arr1.slice(1, 6);
 console.log(a);
-
 
 const b = arr1.splice(1, 1, 1);
 console.log(b);

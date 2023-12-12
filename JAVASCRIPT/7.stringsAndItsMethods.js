@@ -45,6 +45,7 @@ const g = +req.params.id;
 console.log(typeof(g)) 
 
 //To upper case or lower case
+
 let text1 = "hello world" ;
 let text2 = text1.toUpperCase();
 let text3 = text1.toLowerCase();
